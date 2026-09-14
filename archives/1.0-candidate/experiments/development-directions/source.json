@@ -1,0 +1,30 @@
+{
+  "composition": {
+    "installation": "urn:fixture:installation:shop",
+    "revision": "configuration-1",
+    "resources": [
+      {"id":"urn:fixture:catalog","provides":["assortment.import"],"contract":"urn:fixture:contract:import","availability":"available","audiences":["public","operator"]},
+      {"id":"urn:fixture:private-validator","provides":["assortment.validate"],"contract":"urn:fixture:contract:private-validate","availability":"available","audiences":["operator"]}
+    ]
+  },
+  "scenario": {
+    "id":"urn:fixture:scenario:assortment-import",
+    "goal":"Prepare validated assortment import",
+    "inputs":["Supplier assortment file"],
+    "requires":["assortment.validate","assortment.import"],
+    "expectedResult":"A validated import proposal with item counts and errors",
+    "restrictions":["Do not invent a missing API", "Do not execute business operations"],
+    "approval":"Product-controlled approval before any write",
+    "verification":"Compare validation counts with the source file"
+  },
+  "requirement": {"input":"image/png","output":"image/webp","mode":"synchronous","alpha":true,"inputBytes":12582912},
+  "providers": [
+    {"id":"urn:fixture:image:X","configurationRevision":"1","input":["image/jpeg"],"output":["image/webp"],"mode":["synchronous"],"alpha":false},
+    {"id":"urn:fixture:image:Y","configurationRevision":"1","input":["image/png"],"output":["image/webp"],"mode":["synchronous"],"alpha":true}
+  ],
+  "deliveryRequirement": {"country":"TR","mode":"pickup","cashOnDelivery":true,"weightKg":20},
+  "deliveryProviders": [
+    {"id":"urn:fixture:delivery:A","configurationRevision":"1","countries":["TR"],"modes":["courier"],"cashOnDelivery":false},
+    {"id":"urn:fixture:delivery:B","configurationRevision":"1","countries":["TR","DE"],"modes":["courier","pickup"],"cashOnDelivery":true}
+  ]
+}

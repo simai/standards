@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI First 1.0 product pilot return receipt",
+  "type": "object",
+  "required": ["product", "candidate", "candidateLockSha256", "codeRevision", "environment", "commands", "publications", "artifacts", "scenarios", "limitations", "businessExecution"],
+  "properties": {
+    "product": {"enum": ["docara", "larena"]},
+    "candidate": {"const": "1.0.0-rc.1"},
+    "candidateLockSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "codeRevision": {"type": "string", "pattern": "^[0-9a-f]{40}([0-9a-f]{24})?$"},
+    "environment": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string"}},
+    "commands": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["command", "exitCode", "evidence"], "properties": {"command": {"type": "string", "minLength": 1}, "exitCode": {"type": "integer"}, "evidence": {"type": "string", "minLength": 1}}, "additionalProperties": false}},
+    "publications": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "artifacts": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}},
+    "scenarios": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "status", "evidence", "notes"], "properties": {"id": {"type": "string", "minLength": 1}, "status": {"enum": ["pass", "fail", "not-applicable", "blocked"]}, "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "notes": {"type": "string", "minLength": 1}}, "additionalProperties": false}},
+    "limitations": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "businessExecution": {"const": "not-run"}
+  },
+  "additionalProperties": false
+}
+

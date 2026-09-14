@@ -1,0 +1,48 @@
+{
+  "appliesTo": [
+    "api-page"
+  ],
+  "extends": [
+    {
+      "id": "docs.foundation",
+      "path": "docs.foundation.json",
+      "sha256": "aff9ca8ff3f5d0dcce45dd7d60b3149871a18f223bc2ab49aadd66eaca358c35",
+      "version": "1.0.0"
+    }
+  ],
+  "format": "standard-contract",
+  "formatVersion": "1.0",
+  "id": "docs.api",
+  "references": [
+    {
+      "description": "Illustrative source URL; never fetched.",
+      "id": "editorial.notes",
+      "url": "https://example.org/editorial-notes",
+      "version": "1.0.0"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "layout",
+      "level": "must",
+      "property": "layout",
+      "text": "Use the reference layout.",
+      "value": "reference",
+      "verification": "equals"
+    },
+    {
+      "id": "parameters",
+      "level": "must",
+      "text": "List every public parameter, its type, and whether it is required.",
+      "verification": "manual"
+    }
+  ],
+  "specification": {
+    "id": "standard-contract.spec",
+    "path": "format.md",
+    "sha256": "0b960d761c2f7454373666d64938c1937f4c72e87f586fdb217bbecbced15836",
+    "version": "1.0.0"
+  },
+  "title": "Docs Api",
+  "version": "1.0.0"
+}

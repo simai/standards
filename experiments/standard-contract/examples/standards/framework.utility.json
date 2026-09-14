@@ -1,0 +1,18 @@
+{
+  "format": "standard-contract",
+  "formatVersion": "draft-1",
+  "id": "framework.utility",
+  "version": "1.0.0",
+  "title": "Framework Utility",
+  "appliesTo": [
+    "utility"
+  ],
+  "requirements": [
+    {
+      "id": "public-contract",
+      "level": "must",
+      "text": "Document public inputs, outputs and failure conditions.",
+      "verification": "manual"
+    }
+  ]
+}

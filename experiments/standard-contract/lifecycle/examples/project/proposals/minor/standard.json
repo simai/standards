@@ -1,0 +1,47 @@
+{
+  "appliesTo": [
+    "api-page",
+    "tutorial-page"
+  ],
+  "format": "standard-contract",
+  "formatVersion": "draft-2",
+  "id": "docs.foundation",
+  "references": [
+    {
+      "description": "Illustrative source URL; never fetched.",
+      "id": "editorial.notes",
+      "url": "https://example.org/editorial-notes",
+      "version": "1.0.0"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "language",
+      "level": "must",
+      "property": "language",
+      "text": "The page language must be English.",
+      "value": "en",
+      "verification": "equals"
+    },
+    {
+      "id": "links",
+      "level": "must",
+      "text": "Every referenced internal page must exist in the built site.",
+      "verification": "manual"
+    },
+    {
+      "id": "brief-intro",
+      "level": "should",
+      "text": "Prefer a short introduction.",
+      "verification": "manual"
+    }
+  ],
+  "specification": {
+    "id": "standard-contract.spec",
+    "path": "../../standards/format.md",
+    "sha256": "16b12f5dec7f975a0fdab9ffe1bcccaf620ab27554c0d1ea3a211d79350188e8",
+    "version": "0.0.2"
+  },
+  "title": "Docs Foundation",
+  "version": "1.1.0"
+}

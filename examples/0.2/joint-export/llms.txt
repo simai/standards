@@ -1,0 +1,7 @@
+# Example Editor Documentation
+
+> Example resource for testing discovery and exact knowledge retrieval.
+
+## Documentation
+
+- [Configure authentication](<guide.md>): Configure authentication for Example Editor 3.0.

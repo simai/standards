@@ -1,0 +1,72 @@
+{
+  "release": "1.0.0",
+  "date": "2026-09-14",
+  "acceptanceCategory": "maintainer-supported-stable",
+  "checks": {
+    "aiFirstRegression": {
+      "command": "python -m unittest discover -s tests",
+      "tests": 144,
+      "status": "pass"
+    },
+    "historicalStandardContract": {
+      "suites": [
+        "experiments/standard-contract",
+        "experiments/standard-contract/draft-2",
+        "experiments/standard-contract/lifecycle"
+      ],
+      "tests": 70,
+      "status": "pass"
+    },
+    "stableStandardContract": {
+      "suites": [
+        "standard-contract/1.0",
+        "standard-contract/lifecycle"
+      ],
+      "tests": 52,
+      "status": "pass"
+    },
+    "historicalCandidateIntegrity": {
+      "commands": [
+        "python tools/check_candidate02.py",
+        "python tools/check_candidate10.py"
+      ],
+      "files": [
+        101,
+        63
+      ],
+      "status": "pass"
+    },
+    "largeCatalog": {
+      "command": "python tools/benchmark10.py",
+      "items": 100000,
+      "catalogsFetched": 1,
+      "catalogsOmitted": 499,
+      "status": "pass"
+    },
+    "developmentExperiments": {
+      "command": "python experiments/development-directions/run.py",
+      "status": "pass"
+    },
+    "cleanDistribution": {
+      "status": "pass",
+      "aiFirstTests": 144,
+      "stableStandardContractTests": 52,
+      "checks": [
+        "release inventory",
+        "English and local links",
+        "both historical candidate locks"
+      ],
+      "environment": "macOS; Python 3.14.4; Node.js 24.19.0; isolated distribution copy"
+    },
+    "whitespaceReview": {
+      "status": "reviewed-historical-exceptions",
+      "note": "Existing candidate blank EOF lines and Markdown hard-break whitespace are retained with their pinned bytes; not normalized as part of release."
+    }
+  },
+  "evidenceScope": "First-party reproducible local tests including trusted-TLS and Python/JavaScript shared corpus; no independent implementation claim",
+  "productPilotAcceptance": {
+    "docara": "pending",
+    "larena": "pending"
+  },
+  "internationalRecognition": "not-claimed"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "file": "unknown-format.json",
+    "expected": "unknown-format"
+  },
+  {
+    "file": "unknown-version.json",
+    "expected": "unsupported-version"
+  },
+  {
+    "file": "unknown-required-profile.json",
+    "expected": "unsupported-profile"
+  },
+  {
+    "file": "missing-name.json",
+    "expected": "invalid-structure"
+  },
+  {
+    "file": "no-full-representation.json",
+    "expected": "invalid-structure"
+  },
+  {
+    "file": "mixed-language.json",
+    "expected": "invalid-structure"
+  },
+  {
+    "file": "unknown-optional-field.json",
+    "expected": "pass"
+  },
+  {
+    "file": "duplicate-key.json",
+    "expected": "invalid-json"
+  },
+  {
+    "file": "malformed.json",
+    "expected": "invalid-json"
+  }
+]

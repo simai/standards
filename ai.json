@@ -1,0 +1,248 @@
+{
+  "format": "ai-first",
+  "formatVersion": "0.1",
+  "document": "manifest",
+  "revision": "6d1512efc2f7c3a29be9a57af5abbfc0aec025040f65627374d56d44a6ac31d5",
+  "resource": {
+    "id": "urn:ai-first:specification:1.0",
+    "name": "AI First and Standard Contract 1.0.0",
+    "description": "An open specification for discoverable resource knowledge and capability descriptions. No operation executor or international recognition is implied.",
+    "language": "en",
+    "scope": "./",
+    "publisher": {
+      "name": "AI First contributors"
+    }
+  },
+  "items": [
+    {
+      "id": "urn:ai-first:specification:1.0:overview",
+      "kind": "knowledge",
+      "title": "AI First overview",
+      "description": "Purpose, scope and initial adoption.",
+      "language": "en",
+      "revision": "86032ae1aae9294a408ea0a6ba3f8d14177f7cd932223a84d391db2120728b1e",
+      "status": "published",
+      "source": "./README.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "1.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./README.md",
+          "mediaType": "text/markdown",
+          "sha256": "86032ae1aae9294a408ea0a6ba3f8d14177f7cd932223a84d391db2120728b1e"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:1.0:core",
+      "kind": "knowledge",
+      "title": "Core data model",
+      "description": "Manifest, catalogs, items, scope and compatibility.",
+      "language": "en",
+      "revision": "62d523773426ccaf72f5cf7dbfdeaf283dfa091b1798e2ccd2f683c1d5d33f92",
+      "status": "published",
+      "source": "./spec/1.0/core.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "1.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./spec/1.0/core.md",
+          "mediaType": "text/markdown",
+          "sha256": "62d523773426ccaf72f5cf7dbfdeaf283dfa091b1798e2ccd2f683c1d5d33f92"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:1.0:discovery",
+      "kind": "knowledge",
+      "title": "Discovery and reading",
+      "description": "Locate descriptions and retrieve materials within bounded access.",
+      "language": "en",
+      "revision": "b1655df2c514ef18d34a769583e0c3542970658bca05496c3fdc97866bd3ef52",
+      "status": "published",
+      "source": "./spec/1.0/discovery-and-transport.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "1.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./spec/1.0/discovery-and-transport.md",
+          "mediaType": "text/markdown",
+          "sha256": "b1655df2c514ef18d34a769583e0c3542970658bca05496c3fdc97866bd3ef52"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:1.0:knowledge",
+      "kind": "knowledge",
+      "title": "Knowledge profile",
+      "description": "Ordinary materials, examples, languages and source attribution.",
+      "language": "en",
+      "revision": "51301583fb322866efcfefec38eaa940871e294083474f57599bab742701668a",
+      "status": "published",
+      "source": "./spec/1.0/profiles.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "1.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./spec/1.0/profiles.md",
+          "mediaType": "text/markdown",
+          "sha256": "51301583fb322866efcfefec38eaa940871e294083474f57599bab742701668a"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:1.0:capability",
+      "kind": "knowledge",
+      "title": "Standard Contract 1.0",
+      "description": "Describe existing operations without authorizing execution.",
+      "language": "en",
+      "revision": "0b960d761c2f7454373666d64938c1937f4c72e87f586fdb217bbecbced15836",
+      "status": "published",
+      "source": "./standard-contract/1.0/SPEC.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "1.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./standard-contract/1.0/SPEC.md",
+          "mediaType": "text/markdown",
+          "sha256": "0b960d761c2f7454373666d64938c1937f4c72e87f586fdb217bbecbced15836"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:1.0:security",
+      "kind": "knowledge",
+      "title": "Security and trust",
+      "description": "Untrusted content, network access and publisher boundaries.",
+      "language": "en",
+      "revision": "0cd735266b20eaccd114b7b8ec7723fdd66bee0a31a22eb6cbc55f773a57cde3",
+      "status": "published",
+      "source": "./spec/security.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "1.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./spec/security.md",
+          "mediaType": "text/markdown",
+          "sha256": "0cd735266b20eaccd114b7b8ec7723fdd66bee0a31a22eb6cbc55f773a57cde3"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:1.0:conformance",
+      "kind": "knowledge",
+      "title": "Conformance and errors",
+      "description": "Structure, publication and runtime evidence distinctions.",
+      "language": "en",
+      "revision": "13799a056de6971e19641dd1a17e8c6a5312ff0cf5284239c153b93ed37d3f6f",
+      "status": "published",
+      "source": "./spec/1.0/conformance.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "1.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./spec/1.0/conformance.md",
+          "mediaType": "text/markdown",
+          "sha256": "13799a056de6971e19641dd1a17e8c6a5312ff0cf5284239c153b93ed37d3f6f"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:1.0:quickstart",
+      "kind": "knowledge",
+      "title": "Project adoption quickstart",
+      "description": "Add ai.json and validate a static or local publication.",
+      "language": "en",
+      "revision": "c8b3e7556daa0aa4bee4f5f7085a887a2e54957b56831f025d0219a8a8da0c32",
+      "status": "published",
+      "source": "./docs/releases/adoption.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "1.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./docs/releases/adoption.md",
+          "mediaType": "text/markdown",
+          "sha256": "c8b3e7556daa0aa4bee4f5f7085a887a2e54957b56831f025d0219a8a8da0c32"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:1.0:publisher",
+      "kind": "knowledge",
+      "title": "Publisher guide",
+      "description": "Build and update consistent public snapshots.",
+      "language": "en",
+      "revision": "de964a1219dd19bb8fc8987ecfa586aba7ac02eb81abaa097411f705fcdf6d0f",
+      "status": "published",
+      "source": "./docs/1.0/publishing.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "1.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./docs/1.0/publishing.md",
+          "mediaType": "text/markdown",
+          "sha256": "de964a1219dd19bb8fc8987ecfa586aba7ac02eb81abaa097411f705fcdf6d0f"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:1.0:reader",
+      "kind": "knowledge",
+      "title": "Reader guide",
+      "description": "Use the reference CLI and integrate bounded retrieval.",
+      "language": "en",
+      "revision": "bce991c57a48e15d6be081838c019caed63f13794fc57b8057a250949f1c61eb",
+      "status": "published",
+      "source": "./standard-contract/lifecycle/SPEC.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "1.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./standard-contract/lifecycle/SPEC.md",
+          "mediaType": "text/markdown",
+          "sha256": "bce991c57a48e15d6be081838c019caed63f13794fc57b8057a250949f1c61eb"
+        }
+      ]
+    }
+  ]
+}

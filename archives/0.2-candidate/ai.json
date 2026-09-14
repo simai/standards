@@ -1,0 +1,248 @@
+{
+  "format": "ai-first",
+  "formatVersion": "0.1",
+  "document": "manifest",
+  "revision": "a40f426638c5edff73c57a1bbdb93987dd15a537d7aee913dbaf36db48d1263e",
+  "resource": {
+    "id": "urn:ai-first:specification:0.1",
+    "name": "AI First 0.1 Pilot Specification",
+    "description": "An open specification for discoverable resource knowledge and capability descriptions. No operation executor or international recognition is implied.",
+    "language": "en",
+    "scope": "./",
+    "publisher": {
+      "name": "AI First contributors"
+    }
+  },
+  "items": [
+    {
+      "id": "urn:ai-first:specification:0.1:overview",
+      "kind": "knowledge",
+      "title": "AI First overview",
+      "description": "Purpose, scope and initial adoption.",
+      "language": "en",
+      "revision": "61bd2a72eb3afc31cab7776699559abd9b1c23004700be495c145d02181efd23",
+      "status": "published",
+      "source": "./README.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "0.1"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./README.md",
+          "mediaType": "text/markdown",
+          "sha256": "61bd2a72eb3afc31cab7776699559abd9b1c23004700be495c145d02181efd23"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:0.1:core",
+      "kind": "knowledge",
+      "title": "Core data model",
+      "description": "Manifest, catalogs, items, scope and compatibility.",
+      "language": "en",
+      "revision": "2e7311aa213e3a4bbc61b2713e939666b75d5152fe55064f29ebcf25ca257215",
+      "status": "published",
+      "source": "./spec/core.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "0.1"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./spec/core.md",
+          "mediaType": "text/markdown",
+          "sha256": "2e7311aa213e3a4bbc61b2713e939666b75d5152fe55064f29ebcf25ca257215"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:0.1:discovery",
+      "kind": "knowledge",
+      "title": "Discovery and reading",
+      "description": "Locate descriptions and retrieve materials within bounded access.",
+      "language": "en",
+      "revision": "527577c08a2b905908ced6e2fad30e449ced35360e90ed050460d7cb086fe52d",
+      "status": "published",
+      "source": "./spec/discovery.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "0.1"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./spec/discovery.md",
+          "mediaType": "text/markdown",
+          "sha256": "527577c08a2b905908ced6e2fad30e449ced35360e90ed050460d7cb086fe52d"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:0.1:knowledge",
+      "kind": "knowledge",
+      "title": "Knowledge profile",
+      "description": "Ordinary materials, examples, languages and source attribution.",
+      "language": "en",
+      "revision": "be9120c3cdc37cd827b3378b8ba23cf9ecc62a1ca71533959725f1c3b57dabe8",
+      "status": "published",
+      "source": "./profiles/knowledge.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "0.1"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./profiles/knowledge.md",
+          "mediaType": "text/markdown",
+          "sha256": "be9120c3cdc37cd827b3378b8ba23cf9ecc62a1ca71533959725f1c3b57dabe8"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:0.1:capability",
+      "kind": "knowledge",
+      "title": "Capability description profile",
+      "description": "Describe existing operations without authorizing execution.",
+      "language": "en",
+      "revision": "e44c205167625644e61c69711d7767477fc3d70eaf7a80e04742eba2fd0020b5",
+      "status": "published",
+      "source": "./profiles/capability.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "0.1"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./profiles/capability.md",
+          "mediaType": "text/markdown",
+          "sha256": "e44c205167625644e61c69711d7767477fc3d70eaf7a80e04742eba2fd0020b5"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:0.1:security",
+      "kind": "knowledge",
+      "title": "Security and trust",
+      "description": "Untrusted content, network access and publisher boundaries.",
+      "language": "en",
+      "revision": "0cd735266b20eaccd114b7b8ec7723fdd66bee0a31a22eb6cbc55f773a57cde3",
+      "status": "published",
+      "source": "./spec/security.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "0.1"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./spec/security.md",
+          "mediaType": "text/markdown",
+          "sha256": "0cd735266b20eaccd114b7b8ec7723fdd66bee0a31a22eb6cbc55f773a57cde3"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:0.1:conformance",
+      "kind": "knowledge",
+      "title": "Conformance and errors",
+      "description": "Structure, publication and runtime evidence distinctions.",
+      "language": "en",
+      "revision": "27c4d394a8b988587bfe3340938e2f0b97ae55dfb5b7568999037da77e61a5e9",
+      "status": "published",
+      "source": "./spec/conformance.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "0.1"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./spec/conformance.md",
+          "mediaType": "text/markdown",
+          "sha256": "27c4d394a8b988587bfe3340938e2f0b97ae55dfb5b7568999037da77e61a5e9"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:0.1:quickstart",
+      "kind": "knowledge",
+      "title": "Project adoption quickstart",
+      "description": "Add ai.json and validate a static or local publication.",
+      "language": "en",
+      "revision": "a7b8ccd25f358222b24ed06bc8050a4846ffab6f486b31e2a05dcadc8a11b832",
+      "status": "published",
+      "source": "./docs/quickstart.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "0.1"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./docs/quickstart.md",
+          "mediaType": "text/markdown",
+          "sha256": "a7b8ccd25f358222b24ed06bc8050a4846ffab6f486b31e2a05dcadc8a11b832"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:0.1:publisher",
+      "kind": "knowledge",
+      "title": "Publisher guide",
+      "description": "Build and update consistent public snapshots.",
+      "language": "en",
+      "revision": "a6d7f9ba1e67b4d42a3aefc8f84594cfb91da2907c48f1e073d70ba99be19697",
+      "status": "published",
+      "source": "./docs/publisher.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "0.1"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./docs/publisher.md",
+          "mediaType": "text/markdown",
+          "sha256": "a6d7f9ba1e67b4d42a3aefc8f84594cfb91da2907c48f1e073d70ba99be19697"
+        }
+      ]
+    },
+    {
+      "id": "urn:ai-first:specification:0.1:reader",
+      "kind": "knowledge",
+      "title": "Reader guide",
+      "description": "Use the reference CLI and integrate bounded retrieval.",
+      "language": "en",
+      "revision": "4aa2166231e07c9dfb78e65215331ba0957239ca0897d79d76ede57f14a5298d",
+      "status": "published",
+      "source": "./docs/reader.md",
+      "appliesTo": {
+        "product": "urn:ai-first:specification",
+        "versions": [
+          "0.1"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./docs/reader.md",
+          "mediaType": "text/markdown",
+          "sha256": "4aa2166231e07c9dfb78e65215331ba0957239ca0897d79d76ede57f14a5298d"
+        }
+      ]
+    }
+  ]
+}

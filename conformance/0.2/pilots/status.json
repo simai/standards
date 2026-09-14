@@ -1,0 +1,26 @@
+{
+  "candidate": "0.2.0-rc.1",
+  "deliveryMode": "user-transfers-file-links",
+  "products": {
+    "docara": {
+      "handoff": "handoffs/0.2/docara.md",
+      "handoffStatus": "prepared",
+      "transferred": "not-confirmed",
+      "pilotImplemented": false,
+      "compatibilityChecked": false,
+      "resultReceipt": null
+    },
+    "larena": {
+      "handoff": "handoffs/0.2/larena.md",
+      "handoffStatus": "prepared",
+      "transferred": "not-confirmed",
+      "pilotImplemented": false,
+      "compatibilityChecked": false,
+      "resultReceipt": null
+    }
+  },
+  "pilotBackedDiscussionReadiness": false,
+  "reason": "No product executor results have been returned. No product repository was edited and no business operation was executed by this task.",
+  "candidateLockSha256": "7ac995ceae305c20189e668d552e98502a0c5fe04bbbbee47bb80c1c686f6ef2",
+  "candidateStatus": "ready"
+}

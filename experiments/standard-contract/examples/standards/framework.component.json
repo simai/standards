@@ -1,0 +1,33 @@
+{
+  "format": "standard-contract",
+  "formatVersion": "draft-1",
+  "id": "framework.component",
+  "version": "1.0.0",
+  "title": "Framework Component",
+  "appliesTo": [
+    "component"
+  ],
+  "requirements": [
+    {
+      "id": "layer",
+      "level": "must",
+      "text": "Declare the component layer.",
+      "verification": "equals",
+      "property": "layer",
+      "value": "component"
+    },
+    {
+      "id": "utility-use",
+      "level": "must",
+      "text": "Use documented utility interfaces; do not depend on private implementation details.",
+      "verification": "manual"
+    }
+  ],
+  "uses": [
+    {
+      "id": "framework.utility",
+      "version": "1.0.0",
+      "description": "Public utility interfaces are dependencies; implementation rules are not inherited."
+    }
+  ]
+}

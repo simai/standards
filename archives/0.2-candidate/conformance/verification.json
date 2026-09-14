@@ -1,0 +1,281 @@
+{
+  "distributionVersion": "0.1.0",
+  "wireVersion": "0.1",
+  "date": "2026-09-09",
+  "verdict": "pass-with-notes",
+  "environment": {
+    "os": "Darwin",
+    "machine": "arm64",
+    "python": "3.14.4",
+    "jsonschema": "4.26.0"
+  },
+  "tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "count": 49,
+    "failures": 0,
+    "errors": 0,
+    "elapsedSeconds": 1.115,
+    "observed": true
+  },
+  "checks": {
+    "repository": "pass",
+    "rootPublication": "pass",
+    "examplePublications": 4,
+    "rootItems": 10,
+    "deterministicExport": "pass",
+    "sourceUpdate": "pass"
+  },
+  "notRun": [
+    "public HTTPS integration",
+    "hosted CI matrix",
+    "live capability execution",
+    "independent external adoption",
+    "institutional certification"
+  ],
+  "inputs": [
+    {
+      "path": "spec/README.md",
+      "sha256": "4fbf73b9ca60269affc7e42c06c75e55769f26e8ee282431508a968e969126ac"
+    },
+    {
+      "path": "spec/conformance.md",
+      "sha256": "27c4d394a8b988587bfe3340938e2f0b97ae55dfb5b7568999037da77e61a5e9"
+    },
+    {
+      "path": "spec/core.md",
+      "sha256": "2e7311aa213e3a4bbc61b2713e939666b75d5152fe55064f29ebcf25ca257215"
+    },
+    {
+      "path": "spec/discovery.md",
+      "sha256": "527577c08a2b905908ced6e2fad30e449ced35360e90ed050460d7cb086fe52d"
+    },
+    {
+      "path": "spec/security.md",
+      "sha256": "0cd735266b20eaccd114b7b8ec7723fdd66bee0a31a22eb6cbc55f773a57cde3"
+    },
+    {
+      "path": "profiles/capability.md",
+      "sha256": "e44c205167625644e61c69711d7767477fc3d70eaf7a80e04742eba2fd0020b5"
+    },
+    {
+      "path": "profiles/knowledge.md",
+      "sha256": "be9120c3cdc37cd827b3378b8ba23cf9ecc62a1ca71533959725f1c3b57dabe8"
+    },
+    {
+      "path": "schemas/README.md",
+      "sha256": "6d4174144d905967924ab72c965a4daf318135d13afe4466dd5e8ecc72fcad30"
+    },
+    {
+      "path": "schemas/catalog.schema.json",
+      "sha256": "a20107c4f3577e84d4ea960562d462f913e1f7fd976a281e391e4f83e38af4e8"
+    },
+    {
+      "path": "schemas/manifest.schema.json",
+      "sha256": "3c6c1c11f1dabaebab49195635074af1de845af1a04f86a712aa09046e3973a5"
+    },
+    {
+      "path": "tools/aifirst.py",
+      "sha256": "ca50f6b4065cf62b6094476b066c53d567af32c8adbb86ef24e56e8cabc7d732"
+    },
+    {
+      "path": "tools/build_manifest.py",
+      "sha256": "f936f833a9cc4eb90b60b2aad2e8d6cbd362f89ab5a23a1022e71704b1a93bfc"
+    },
+    {
+      "path": "tools/check_repository.py",
+      "sha256": "b7399b19b8e0182f945524bd3188c1f02c3c12a7c04ca6cb9315e58917eae9d9"
+    },
+    {
+      "path": "tests/test_standard.py",
+      "sha256": "5d3e77e072eb4b25c7be37e1253b91a1be67466b57908d23611cf8720d8079b0"
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "47603313236030ed666abf7b67c107d34936a86b8ad44752710b2d1ce06d1da1"
+    },
+    {
+      "path": "examples/catalog/ai.json",
+      "sha256": "84fbb27b96f27025b9c42d05d43490668c0c09aa5211db0ba7fa7618f515ab38"
+    },
+    {
+      "path": "examples/catalog/guides/auth-v2.md",
+      "sha256": "b37913f536e97a885d777d141ef7a54d1399a3d004614201fe93ede961195716"
+    },
+    {
+      "path": "examples/catalog/guides/auth-v3.md",
+      "sha256": "b6ec164ed58ae54d1d1e7436b1128601bbf9bff3f914b77487e0af39b82864e7"
+    },
+    {
+      "path": "examples/catalog/index.html",
+      "sha256": "027fc92a30460924dfdcf91d6c6ad388074f5af9ac90bd0e049f562315de2c1f"
+    },
+    {
+      "path": "examples/catalog/index.json",
+      "sha256": "e718aaaa86eabf3920ef0047373223624d217d6a746a21da5db29e5a5ea3587a"
+    },
+    {
+      "path": "examples/collection/ai.json",
+      "sha256": "0711cbd3f27b511c9a0d97739b5a3f8db19a83e24e5caa1a0dae29e4b20360b7"
+    },
+    {
+      "path": "examples/collection/editor/ai.json",
+      "sha256": "43660e33e206ef8033de3f5bac3f3f1ba87a4d3c5943351b680818cf65404537"
+    },
+    {
+      "path": "examples/collection/editor/guide.md",
+      "sha256": "b6ec164ed58ae54d1d1e7436b1128601bbf9bff3f914b77487e0af39b82864e7"
+    },
+    {
+      "path": "examples/collection/editor/index.html",
+      "sha256": "e39fac24f5ffc05a6a7c57e148ebc1da0f7ac3b26908947f2a8a33937484f7e0"
+    },
+    {
+      "path": "examples/minimal/ai.json",
+      "sha256": "242768ac7fa7b4cbedd76b852e3cc47071b8112f44271a0788802c6200c0d5b4"
+    },
+    {
+      "path": "examples/minimal/guide.md",
+      "sha256": "b6ec164ed58ae54d1d1e7436b1128601bbf9bff3f914b77487e0af39b82864e7"
+    },
+    {
+      "path": "examples/service/ai.json",
+      "sha256": "fb80a6bad6966f647a950c790d8caa3ddd1a4a7819e5ebcf20db31bf1ff0d42b"
+    },
+    {
+      "path": "examples/service/create-document.md",
+      "sha256": "daecaed0875d8a5a8fc6cade700ca348ce0c9e28722ddc57ad95798b2c1048f0"
+    },
+    {
+      "path": "examples/service/openapi.json",
+      "sha256": "70c7690cb3b76fefb85183b6ab77e281b87c6b9c331335aff372db7d19bb5fb0"
+    },
+    {
+      "path": "decisions/0001-foundation.md",
+      "sha256": "6d05075fac1827fa6ee08d5ff127a98da376bf9ee581359430d5d06c6e0ec887"
+    },
+    {
+      "path": "decisions/0002-version-and-scope.md",
+      "sha256": "8c1d10a9160e703a8e83fc9cc024d25cbc643c4acf53e4dfee17734f9d2e9949"
+    },
+    {
+      "path": "docs/adoption-checklist.md",
+      "sha256": "384c3782b697263c62187c974f71432f4ae1a8442c471e5fd6e58e2300c9b29f"
+    },
+    {
+      "path": "docs/migration.md",
+      "sha256": "66780abcd28ffd68ba689ee338826d3f318dac69f26cce434b4cfefa14acf53b"
+    },
+    {
+      "path": "docs/publisher.md",
+      "sha256": "a6d7f9ba1e67b4d42a3aefc8f84594cfb91da2907c48f1e073d70ba99be19697"
+    },
+    {
+      "path": "docs/quickstart.md",
+      "sha256": "a7b8ccd25f358222b24ed06bc8050a4846ffab6f486b31e2a05dcadc8a11b832"
+    },
+    {
+      "path": "docs/reader.md",
+      "sha256": "4aa2166231e07c9dfb78e65215331ba0957239ca0897d79d76ede57f14a5298d"
+    },
+    {
+      "path": "docs/scenarios.md",
+      "sha256": "f78b9e1a2fa4491ae3500a8bb45867983c119b6e048d43183c8e167473b56a81"
+    },
+    {
+      "path": "docs/standards-landscape.md",
+      "sha256": "cf72f05ff529b4ee24624494cb08254f935946caafd7b4dcd4ea66754b6a9515"
+    },
+    {
+      "path": "ai.json",
+      "sha256": "7d98b380f149e5646c9f2e42f527ad3bd00736ebaa3f96cb8fe4f58eb3e4244e"
+    },
+    {
+      "path": "README.md",
+      "sha256": "61bd2a72eb3afc31cab7776699559abd9b1c23004700be495c145d02181efd23"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "756cc9e506ae4ee1a6f6c0507088b5cfc0dc8ba350fb2d2d46f1ffa72033adb6"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "809ce221ad9e5b4ca1b6ef8351d5182998262026e7db94d25827cc69fd9f9c4a"
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "44e325c67bb7dda081e616f614ed57dd9a824de9e5ebc9e92a5efb0b2566b8cd"
+    },
+    {
+      "path": "GOVERNANCE.md",
+      "sha256": "fba58adda19b28e4c1fb7aeb7051c23edf491b33d4df85e8c9577985e06d6e55"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "b7b4456853f57ff120e577c5a61e0745d19b20cac8b41a9313a5ed1288c3894f"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "70680477366861ebcc3956ebb8647a28a395d06ed6395e3561849e242d68f619"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "6ffe11da53f4a0117bdf47ae352ebe4f1b4a4a8de6fd5d77cbc70880fb6fa91c"
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "sha256": "b780d7725af140800a627d59c8c4618368bf6ff86b127bf71128b42c6e24f182"
+    },
+    {
+      "path": "conformance/fixtures/cases.json",
+      "sha256": "927fdcbbe0506f1e37d66b6781f3fb4f0289eb15c7fab946868ccc0cb86babf5"
+    },
+    {
+      "path": "conformance/fixtures/duplicate-key.json",
+      "sha256": "2501819aa6e99424e199dfce8ca2cb3f805a2f2e428d1dc3eb528846c451fe21"
+    },
+    {
+      "path": "conformance/fixtures/malformed.json",
+      "sha256": "8f9302f65614f26c0ac129b3a69b2617d858989920ca60be65da649dc4b34118"
+    },
+    {
+      "path": "conformance/fixtures/missing-name.json",
+      "sha256": "e9c45982461a5b3fc97d295eec77f87cbc23a362a69577915b6cbd3d86b6320e"
+    },
+    {
+      "path": "conformance/fixtures/mixed-language.json",
+      "sha256": "7ef9fd46e75a62ee643a7c166a00e86bfe25319fd2d799a30fc47f63c08271bf"
+    },
+    {
+      "path": "conformance/fixtures/no-full-representation.json",
+      "sha256": "b123e2570653513efc4008de7bddc368a3e422944190f5b230cb8b3d9949de4f"
+    },
+    {
+      "path": "conformance/fixtures/unknown-format.json",
+      "sha256": "2462b8e6e249544acaaf0b251554a23a68f9d6789c93a7e2e861202e0fdc42dd"
+    },
+    {
+      "path": "conformance/fixtures/unknown-optional-field.json",
+      "sha256": "8884c98cf167dffd68d76266a2903dd02d62170ad4e6b71621e3a402d2d28a27"
+    },
+    {
+      "path": "conformance/fixtures/unknown-required-profile.json",
+      "sha256": "803a2585ef62e9daa326e1d3f6a6f3cea0df08aa7445f13933e5605afa5827db"
+    },
+    {
+      "path": "conformance/fixtures/unknown-version.json",
+      "sha256": "32e1e95cbca5262cc1c9ad0f44a5f69657d04e9042679b791f418182d7656a8d"
+    },
+    {
+      "path": "conformance/fixtures/valid.json",
+      "sha256": "d631c09bd7c5113a491afb8bc61f8f689104798a2c0cf672733a0ac66e70194f"
+    }
+  ],
+  "repositoryProcess": {
+    "status": "fail",
+    "reason": "Separate SIMAI workflow/evidence bindings and project inventory are not configured; product evidence is not process evidence."
+  }
+}

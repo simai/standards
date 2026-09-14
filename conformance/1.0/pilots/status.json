@@ -1,0 +1,23 @@
+{
+  "candidate": "1.0.0-rc.1",
+  "candidateLockSha256": "1a5010469988a9fcdaf76799e30897130e62cc16a821933109d67a160655aab3",
+  "products": {
+    "docara": {
+      "handoff": "handoffs/1.0/docara.md",
+      "receipt": null,
+      "artifactRoot": null,
+      "implementation": "not-started",
+      "compatibility": "not-verified",
+      "evidenceReview": "pending"
+    },
+    "larena": {
+      "handoff": "handoffs/1.0/larena.md",
+      "receipt": null,
+      "artifactRoot": null,
+      "implementation": "not-started",
+      "compatibility": "not-verified",
+      "evidenceReview": "pending"
+    }
+  },
+  "stablePromotion": "blocked-by-product-evidence"
+}

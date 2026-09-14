@@ -1,0 +1,686 @@
+{
+  "status": "pass",
+  "experimentOnly": true,
+  "businessExecution": "not-run",
+  "newRequiredCoreFields": 0,
+  "newWireProfiles": 0,
+  "cases": [
+    {
+      "case": "monolith-same-provider",
+      "observed": "urn:fixture:catalog",
+      "expected": "urn:fixture:catalog",
+      "status": "pass"
+    },
+    {
+      "case": "monolith-not-installation-proof",
+      "observed": false,
+      "expected": false,
+      "status": "pass"
+    },
+    {
+      "case": "remote-same-provider",
+      "observed": "urn:fixture:catalog",
+      "expected": "urn:fixture:catalog",
+      "status": "pass"
+    },
+    {
+      "case": "remote-not-installation-proof",
+      "observed": false,
+      "expected": false,
+      "status": "pass"
+    },
+    {
+      "case": "hidden-prerequisite",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "hidden-name-not-exported",
+      "observed": false,
+      "expected": false,
+      "status": "pass"
+    },
+    {
+      "case": "hidden-contract-not-exported",
+      "observed": false,
+      "expected": false,
+      "status": "pass"
+    },
+    {
+      "case": "known-missing-prerequisite",
+      "observed": "missing-prerequisite",
+      "expected": "missing-prerequisite",
+      "status": "pass"
+    },
+    {
+      "case": "declared-prerequisites",
+      "observed": "declared-prerequisites-present",
+      "expected": "declared-prerequisites-present",
+      "status": "pass"
+    },
+    {
+      "case": "wrong-installation",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "unavailable-provider",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "provider-X",
+      "observed": "incompatible",
+      "expected": "incompatible",
+      "status": "pass"
+    },
+    {
+      "case": "provider-Y-without-evidence",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "provider-Y-bound-evidence",
+      "observed": "compatible",
+      "expected": "compatible",
+      "status": "pass"
+    },
+    {
+      "case": "evidence-expiresAt",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "evidence-observedAt",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "evidence-tenant",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "evidence-providerDigest",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "evidence-requirementDigest",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "evidence-checker",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "evidence-configurationRevision",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "evidence-result",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "evidence-testedInputBytes",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "delivery-provider-A",
+      "observed": "incompatible",
+      "expected": "incompatible",
+      "status": "pass"
+    },
+    {
+      "case": "delivery-provider-B-without-evidence",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "delivery-provider-B-bound-evidence",
+      "observed": "compatible",
+      "expected": "compatible",
+      "status": "pass"
+    },
+    {
+      "case": "delivery-provider-B-insufficient-weight",
+      "observed": "unknown",
+      "expected": "unknown",
+      "status": "pass"
+    },
+    {
+      "case": "public-read-original-value",
+      "observed": {
+        "composition": {
+          "installation": "urn:fixture:installation:shop",
+          "revision": "configuration-1",
+          "coverage": "restricted",
+          "resources": [
+            {
+              "id": "urn:fixture:catalog",
+              "provides": [
+                "assortment.import"
+              ],
+              "contract": "urn:fixture:contract:import",
+              "availability": "available"
+            }
+          ]
+        },
+        "domainExamples": {
+          "image": {
+            "requirement": {
+              "input": "image/png",
+              "output": "image/webp",
+              "mode": "synchronous",
+              "alpha": true,
+              "inputBytes": 12582912
+            },
+            "providers": [
+              {
+                "id": "urn:fixture:image:X",
+                "configurationRevision": "1",
+                "input": [
+                  "image/jpeg"
+                ],
+                "output": [
+                  "image/webp"
+                ],
+                "mode": [
+                  "synchronous"
+                ],
+                "alpha": false
+              },
+              {
+                "id": "urn:fixture:image:Y",
+                "configurationRevision": "1",
+                "input": [
+                  "image/png"
+                ],
+                "output": [
+                  "image/webp"
+                ],
+                "mode": [
+                  "synchronous"
+                ],
+                "alpha": true
+              }
+            ]
+          },
+          "delivery": {
+            "requirement": {
+              "country": "TR",
+              "mode": "pickup",
+              "cashOnDelivery": true,
+              "weightKg": 20
+            },
+            "providers": [
+              {
+                "id": "urn:fixture:delivery:A",
+                "configurationRevision": "1",
+                "countries": [
+                  "TR"
+                ],
+                "modes": [
+                  "courier"
+                ],
+                "cashOnDelivery": false
+              },
+              {
+                "id": "urn:fixture:delivery:B",
+                "configurationRevision": "1",
+                "countries": [
+                  "TR",
+                  "DE"
+                ],
+                "modes": [
+                  "courier",
+                  "pickup"
+                ],
+                "cashOnDelivery": true
+              }
+            ]
+          }
+        }
+      },
+      "expected": {
+        "composition": {
+          "installation": "urn:fixture:installation:shop",
+          "revision": "configuration-1",
+          "coverage": "restricted",
+          "resources": [
+            {
+              "id": "urn:fixture:catalog",
+              "provides": [
+                "assortment.import"
+              ],
+              "contract": "urn:fixture:contract:import",
+              "availability": "available"
+            }
+          ]
+        },
+        "domainExamples": {
+          "image": {
+            "requirement": {
+              "input": "image/png",
+              "output": "image/webp",
+              "mode": "synchronous",
+              "alpha": true,
+              "inputBytes": 12582912
+            },
+            "providers": [
+              {
+                "id": "urn:fixture:image:X",
+                "configurationRevision": "1",
+                "input": [
+                  "image/jpeg"
+                ],
+                "output": [
+                  "image/webp"
+                ],
+                "mode": [
+                  "synchronous"
+                ],
+                "alpha": false
+              },
+              {
+                "id": "urn:fixture:image:Y",
+                "configurationRevision": "1",
+                "input": [
+                  "image/png"
+                ],
+                "output": [
+                  "image/webp"
+                ],
+                "mode": [
+                  "synchronous"
+                ],
+                "alpha": true
+              }
+            ]
+          },
+          "delivery": {
+            "requirement": {
+              "country": "TR",
+              "mode": "pickup",
+              "cashOnDelivery": true,
+              "weightKg": 20
+            },
+            "providers": [
+              {
+                "id": "urn:fixture:delivery:A",
+                "configurationRevision": "1",
+                "countries": [
+                  "TR"
+                ],
+                "modes": [
+                  "courier"
+                ],
+                "cashOnDelivery": false
+              },
+              {
+                "id": "urn:fixture:delivery:B",
+                "configurationRevision": "1",
+                "countries": [
+                  "TR",
+                  "DE"
+                ],
+                "modes": [
+                  "courier",
+                  "pickup"
+                ],
+                "cashOnDelivery": true
+              }
+            ]
+          }
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "case": "public-publication-complete",
+      "observed": "complete",
+      "expected": "complete",
+      "status": "pass"
+    },
+    {
+      "case": "public-related-not-fetched",
+      "observed": false,
+      "expected": false,
+      "status": "pass"
+    },
+    {
+      "case": "public-reader-no-private-name",
+      "observed": false,
+      "expected": false,
+      "status": "pass"
+    },
+    {
+      "case": "public-reader-no-private-contract",
+      "observed": false,
+      "expected": false,
+      "status": "pass"
+    },
+    {
+      "case": "public-publication-validation",
+      "observed": "pass",
+      "expected": "pass",
+      "status": "pass"
+    },
+    {
+      "case": "operator-read-original-value",
+      "observed": {
+        "composition": {
+          "installation": "urn:fixture:installation:shop",
+          "revision": "configuration-1",
+          "coverage": "complete",
+          "resources": [
+            {
+              "id": "urn:fixture:catalog",
+              "provides": [
+                "assortment.import"
+              ],
+              "contract": "urn:fixture:contract:import",
+              "availability": "available"
+            },
+            {
+              "id": "urn:fixture:private-validator",
+              "provides": [
+                "assortment.validate"
+              ],
+              "contract": "urn:fixture:contract:private-validate",
+              "availability": "available"
+            }
+          ]
+        },
+        "domainExamples": {
+          "image": {
+            "requirement": {
+              "input": "image/png",
+              "output": "image/webp",
+              "mode": "synchronous",
+              "alpha": true,
+              "inputBytes": 12582912
+            },
+            "providers": [
+              {
+                "id": "urn:fixture:image:X",
+                "configurationRevision": "1",
+                "input": [
+                  "image/jpeg"
+                ],
+                "output": [
+                  "image/webp"
+                ],
+                "mode": [
+                  "synchronous"
+                ],
+                "alpha": false
+              },
+              {
+                "id": "urn:fixture:image:Y",
+                "configurationRevision": "1",
+                "input": [
+                  "image/png"
+                ],
+                "output": [
+                  "image/webp"
+                ],
+                "mode": [
+                  "synchronous"
+                ],
+                "alpha": true
+              }
+            ]
+          },
+          "delivery": {
+            "requirement": {
+              "country": "TR",
+              "mode": "pickup",
+              "cashOnDelivery": true,
+              "weightKg": 20
+            },
+            "providers": [
+              {
+                "id": "urn:fixture:delivery:A",
+                "configurationRevision": "1",
+                "countries": [
+                  "TR"
+                ],
+                "modes": [
+                  "courier"
+                ],
+                "cashOnDelivery": false
+              },
+              {
+                "id": "urn:fixture:delivery:B",
+                "configurationRevision": "1",
+                "countries": [
+                  "TR",
+                  "DE"
+                ],
+                "modes": [
+                  "courier",
+                  "pickup"
+                ],
+                "cashOnDelivery": true
+              }
+            ]
+          }
+        },
+        "scenario": {
+          "id": "urn:fixture:scenario:assortment-import",
+          "goal": "Prepare validated assortment import",
+          "inputs": [
+            "Supplier assortment file"
+          ],
+          "requires": [
+            "assortment.validate",
+            "assortment.import"
+          ],
+          "expectedResult": "A validated import proposal with item counts and errors",
+          "restrictions": [
+            "Do not invent a missing API",
+            "Do not execute business operations"
+          ],
+          "approval": "Product-controlled approval before any write",
+          "verification": "Compare validation counts with the source file"
+        }
+      },
+      "expected": {
+        "composition": {
+          "installation": "urn:fixture:installation:shop",
+          "revision": "configuration-1",
+          "coverage": "complete",
+          "resources": [
+            {
+              "id": "urn:fixture:catalog",
+              "provides": [
+                "assortment.import"
+              ],
+              "contract": "urn:fixture:contract:import",
+              "availability": "available"
+            },
+            {
+              "id": "urn:fixture:private-validator",
+              "provides": [
+                "assortment.validate"
+              ],
+              "contract": "urn:fixture:contract:private-validate",
+              "availability": "available"
+            }
+          ]
+        },
+        "domainExamples": {
+          "image": {
+            "requirement": {
+              "input": "image/png",
+              "output": "image/webp",
+              "mode": "synchronous",
+              "alpha": true,
+              "inputBytes": 12582912
+            },
+            "providers": [
+              {
+                "id": "urn:fixture:image:X",
+                "configurationRevision": "1",
+                "input": [
+                  "image/jpeg"
+                ],
+                "output": [
+                  "image/webp"
+                ],
+                "mode": [
+                  "synchronous"
+                ],
+                "alpha": false
+              },
+              {
+                "id": "urn:fixture:image:Y",
+                "configurationRevision": "1",
+                "input": [
+                  "image/png"
+                ],
+                "output": [
+                  "image/webp"
+                ],
+                "mode": [
+                  "synchronous"
+                ],
+                "alpha": true
+              }
+            ]
+          },
+          "delivery": {
+            "requirement": {
+              "country": "TR",
+              "mode": "pickup",
+              "cashOnDelivery": true,
+              "weightKg": 20
+            },
+            "providers": [
+              {
+                "id": "urn:fixture:delivery:A",
+                "configurationRevision": "1",
+                "countries": [
+                  "TR"
+                ],
+                "modes": [
+                  "courier"
+                ],
+                "cashOnDelivery": false
+              },
+              {
+                "id": "urn:fixture:delivery:B",
+                "configurationRevision": "1",
+                "countries": [
+                  "TR",
+                  "DE"
+                ],
+                "modes": [
+                  "courier",
+                  "pickup"
+                ],
+                "cashOnDelivery": true
+              }
+            ]
+          }
+        },
+        "scenario": {
+          "id": "urn:fixture:scenario:assortment-import",
+          "goal": "Prepare validated assortment import",
+          "inputs": [
+            "Supplier assortment file"
+          ],
+          "requires": [
+            "assortment.validate",
+            "assortment.import"
+          ],
+          "expectedResult": "A validated import proposal with item counts and errors",
+          "restrictions": [
+            "Do not invent a missing API",
+            "Do not execute business operations"
+          ],
+          "approval": "Product-controlled approval before any write",
+          "verification": "Compare validation counts with the source file"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "case": "operator-publication-complete",
+      "observed": "complete",
+      "expected": "complete",
+      "status": "pass"
+    },
+    {
+      "case": "operator-related-not-fetched",
+      "observed": false,
+      "expected": false,
+      "status": "pass"
+    },
+    {
+      "case": "operator-publication-validation",
+      "observed": "pass",
+      "expected": "pass",
+      "status": "pass"
+    }
+  ],
+  "measurements": [
+    {
+      "audience": "public",
+      "readerRequests": 5,
+      "decodedBytes": 9179,
+      "transport": "local-files-including-validation"
+    },
+    {
+      "audience": "operator",
+      "readerRequests": 5,
+      "decodedBytes": 12407,
+      "transport": "local-files-including-validation"
+    }
+  ],
+  "domains": [
+    "assortment-composition",
+    "image-processing",
+    "delivery"
+  ],
+  "sharedEvidenceFields": [
+    "subject",
+    "providerDigest",
+    "requirementDigest",
+    "tenant",
+    "configurationRevision",
+    "method",
+    "checker",
+    "observedAt",
+    "expiresAt",
+    "result"
+  ],
+  "semanticsOwner": "Synthetic domain adapter, not generic AI First reader",
+  "limitations": [
+    "Synthetic observations are not real image-processing evidence.",
+    "No product pilot or real tenant cache isolation is proven here.",
+    "Transport was local; current candidate has separate HTTPS tests.",
+    "Restricted projection does not enumerate hidden capabilities.",
+    "No automatic traversal, authorization, service switching or workflow execution."
+  ]
+}

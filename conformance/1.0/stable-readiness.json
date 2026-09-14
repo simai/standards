@@ -1,0 +1,19 @@
+{
+  "status": "blocked",
+  "candidate": "1.0.0-rc.1",
+  "candidateLockSha256": "1a5010469988a9fcdaf76799e30897130e62cc16a821933109d67a160655aab3",
+  "target": "1.0.0",
+  "blockers": [
+    "pilot-not-accepted:docara",
+    "compatibility-not-verified:docara",
+    "missing-receipt:docara",
+    "missing-artifact-root:docara",
+    "evidence-review-not-accepted:docara",
+    "pilot-not-accepted:larena",
+    "compatibility-not-verified:larena",
+    "missing-receipt:larena",
+    "missing-artifact-root:larena",
+    "evidence-review-not-accepted:larena"
+  ],
+  "pilotBundlesChecked": []
+}

@@ -1,0 +1,51 @@
+{
+  "format": "ai-first",
+  "formatVersion": "1.0",
+  "document": "manifest",
+  "revision": "2026-09-09.1",
+  "resource": {
+    "id": "urn:example:document-service",
+    "name": "Example Document Service",
+    "description": "Example resource for testing discovery and exact knowledge retrieval.",
+    "language": "en",
+    "scope": "./",
+    "publisher": {
+      "name": "Example Publisher"
+    }
+  },
+  "requires": [
+    "capability"
+  ],
+  "items": [
+    {
+      "id": "urn:example:guide:create-document",
+      "kind": "capability",
+      "title": "Create a private document",
+      "description": "Create a private document through the existing API contract.",
+      "language": "en",
+      "revision": "1",
+      "status": "published",
+      "source": "./create-document.md",
+      "representations": [
+        {
+          "href": "./create-document.md",
+          "mediaType": "text/markdown",
+          "sha256": "daecaed0875d8a5a8fc6cade700ca348ce0c9e28722ddc57ad95798b2c1048f0"
+        }
+      ],
+      "capability": {
+        "contract": {
+          "type": "openapi",
+          "href": "./openapi.json",
+          "mediaType": "application/json",
+          "operation": "/paths/~1documents/post"
+        },
+        "effects": "write",
+        "authorization": "required",
+        "confirmation": "required",
+        "instructions": "./create-document.md"
+      }
+    }
+  ]
+}
+

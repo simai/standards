@@ -1,0 +1,61 @@
+{
+  "entries": [
+    {
+      "decisionSource": "Example owner decision",
+      "reason": "Demonstration baseline only.",
+      "release": {
+        "id": "docs.tutorial",
+        "sha256": "dff7a59597e0bbc7396d21117d078badc47e858753f202e55777e7b1f98dcd67",
+        "version": "1.0.0"
+      },
+      "sequence": 1,
+      "status": "active"
+    },
+    {
+      "decisionSource": "Example owner decision",
+      "reason": "Demonstration baseline only.",
+      "release": {
+        "id": "framework.utility",
+        "sha256": "dfe396672437edc27094ebcbd7b1337e4608570fc8948faa85e3e67588a1d3b0",
+        "version": "1.0.0"
+      },
+      "sequence": 2,
+      "status": "active"
+    },
+    {
+      "decisionSource": "Example owner decision",
+      "reason": "Demonstration baseline only.",
+      "release": {
+        "id": "docs.foundation",
+        "sha256": "fba34441573581c66a4a0c55e186a7be3b693715dd4dc2c11ecfef08b01e7b45",
+        "version": "1.0.0"
+      },
+      "sequence": 3,
+      "status": "active"
+    },
+    {
+      "decisionSource": "Example owner decision",
+      "reason": "Demonstration baseline only.",
+      "release": {
+        "id": "docs.api",
+        "sha256": "04f08538a4d7fe4c062d1966bda71cb62478f55328ab577d34616805b95dba76",
+        "version": "1.0.0"
+      },
+      "sequence": 4,
+      "status": "active"
+    },
+    {
+      "decisionSource": "Example owner decision",
+      "reason": "Demonstration baseline only.",
+      "release": {
+        "id": "framework.component",
+        "sha256": "eab677bb4ff4a381322f1997bad2de16df9ff53fe46be5900a61a107c44e4839",
+        "version": "1.0.0"
+      },
+      "sequence": 5,
+      "status": "active"
+    }
+  ],
+  "format": "standard-contract-journal",
+  "formatVersion": "lifecycle-draft-1"
+}

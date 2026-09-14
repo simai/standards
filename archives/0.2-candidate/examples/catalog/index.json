@@ -1,0 +1,55 @@
+{
+  "format": "ai-first",
+  "formatVersion": "0.1",
+  "document": "catalog",
+  "revision": "2026-09-09.1",
+  "resourceId": "urn:example:editor-docs",
+  "items": [
+    {
+      "id": "urn:example:guide:auth-v3",
+      "kind": "knowledge",
+      "title": "Configure authentication",
+      "description": "Configure authentication for Example Editor 3.0.",
+      "language": "en",
+      "revision": "1",
+      "status": "published",
+      "source": "./guides/auth-v3.md",
+      "appliesTo": {
+        "product": "urn:example:editor",
+        "versions": [
+          "3.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./guides/auth-v3.md",
+          "mediaType": "text/markdown",
+          "sha256": "b6ec164ed58ae54d1d1e7436b1128601bbf9bff3f914b77487e0af39b82864e7"
+        }
+      ]
+    },
+    {
+      "id": "urn:example:guide:auth-v2",
+      "kind": "knowledge",
+      "title": "Configure authentication (legacy)",
+      "description": "Configure authentication for Example Editor 2.0.",
+      "language": "en",
+      "revision": "1",
+      "status": "published",
+      "source": "./guides/auth-v2.md",
+      "appliesTo": {
+        "product": "urn:example:editor",
+        "versions": [
+          "2.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./guides/auth-v2.md",
+          "mediaType": "text/markdown",
+          "sha256": "b37913f536e97a885d777d141ef7a54d1399a3d004614201fe93ede961195716"
+        }
+      ]
+    }
+  ]
+}

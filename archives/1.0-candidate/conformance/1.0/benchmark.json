@@ -1,0 +1,156 @@
+{
+  "status": "pass",
+  "scope": "synthetic deterministic local HTTP tests, not LLM evaluation or independent adoption",
+  "largeCatalog": {
+    "itemsInPublication": 100000,
+    "shards": 500,
+    "itemsPerShard": 200,
+    "catalogsFetched": 1,
+    "catalogsOmitted": 499,
+    "itemsLoaded": 200,
+    "httpRequests": 3,
+    "decodedBytes": 157553,
+    "transferredBytes": 157553,
+    "elapsedSeconds": 0.062002,
+    "completeness": "targeted",
+    "selectedId": "urn:benchmark:item:8407",
+    "limits": "reference defaults; no raised descriptor or item limits"
+  },
+  "fixedTasks": [
+    {
+      "task": "install-1.0-en",
+      "mode": "ordinary-html",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 296,
+      "elapsedSeconds": 0.00907
+    },
+    {
+      "task": "install-1.0-en",
+      "mode": "llms.txt",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 381,
+      "elapsedSeconds": 0.000693
+    },
+    {
+      "task": "install-1.0-en",
+      "mode": "ai-first",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 1666,
+      "elapsedSeconds": 0.006273
+    },
+    {
+      "task": "install-1.0-fr",
+      "mode": "ordinary-html",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 296,
+      "elapsedSeconds": 0.000692
+    },
+    {
+      "task": "install-1.0-fr",
+      "mode": "llms.txt",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 381,
+      "elapsedSeconds": 0.000607
+    },
+    {
+      "task": "install-1.0-fr",
+      "mode": "ai-first",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 1666,
+      "elapsedSeconds": 0.006099
+    },
+    {
+      "task": "install-2.0-en",
+      "mode": "ordinary-html",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 296,
+      "elapsedSeconds": 0.000542
+    },
+    {
+      "task": "install-2.0-en",
+      "mode": "llms.txt",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 381,
+      "elapsedSeconds": 0.000534
+    },
+    {
+      "task": "install-2.0-en",
+      "mode": "ai-first",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 1666,
+      "elapsedSeconds": 0.005806
+    },
+    {
+      "task": "install-2.0-fr",
+      "mode": "ordinary-html",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 296,
+      "elapsedSeconds": 0.0005
+    },
+    {
+      "task": "install-2.0-fr",
+      "mode": "llms.txt",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 381,
+      "elapsedSeconds": 0.000518
+    },
+    {
+      "task": "install-2.0-fr",
+      "mode": "ai-first",
+      "correctSelection": true,
+      "exactMaterialBytes": true,
+      "codeAndTablePreserved": true,
+      "httpRequests": 2,
+      "transferredBytes": 1666,
+      "elapsedSeconds": 0.005952
+    }
+  ],
+  "publishingEffort": {
+    "sourceMetadataRecords": 4,
+    "metadataDuplicatedByHuman": 0,
+    "generatedIndexes": 3,
+    "humanTimeMeasured": false,
+    "note": "All indexes derive from the same records; code does not estimate developer hours."
+  },
+  "limitations": [
+    "Loopback HTTP benchmark; HTTPS is covered separately by trusted-certificate tests.",
+    "No model accuracy claims; ordinary and llms.txt titles include explicit version/language.",
+    "AI First adds machine-checked constraints and provenance but is not guaranteed smaller or faster.",
+    "Large fixture proves selective network retrieval; peak memory is not measured.",
+    "No product pilot or third-party implementation evidence."
+  ]
+}
+

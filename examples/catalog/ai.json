@@ -1,0 +1,22 @@
+{
+  "format": "ai-first",
+  "formatVersion": "0.1",
+  "document": "manifest",
+  "revision": "2026-09-09.1",
+  "resource": {
+    "id": "urn:example:editor-docs",
+    "name": "Example Editor Documentation",
+    "description": "Example resource for testing discovery and exact knowledge retrieval.",
+    "language": "en",
+    "scope": "./",
+    "publisher": {
+      "name": "Example Publisher"
+    }
+  },
+  "catalogs": [
+    {
+      "href": "./index.json",
+      "description": "Versioned installation and authentication guides."
+    }
+  ]
+}

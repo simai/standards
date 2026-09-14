@@ -1,0 +1,25 @@
+{
+  "assessment": {
+    "decisionSource": "Example standard owner",
+    "objects": "incompatible",
+    "reader": "compatible"
+  },
+  "category": "major",
+  "format": "standard-contract-transition",
+  "formatVersion": "lifecycle-draft-1",
+  "rationale": "Illustrative major change; assessment is not proof.",
+  "replacements": [],
+  "requiredChecks": [
+    "Review changed obligations against real pages."
+  ],
+  "source": {
+    "id": "docs.foundation",
+    "sha256": "fba34441573581c66a4a0c55e186a7be3b693715dd4dc2c11ecfef08b01e7b45",
+    "version": "1.0.0"
+  },
+  "target": {
+    "id": "docs.foundation",
+    "sha256": "ff677e5dfeab71627d3d6c0084474baa8ad285c02a52a4a7bf75efe181b80ea9",
+    "version": "2.0.0"
+  }
+}

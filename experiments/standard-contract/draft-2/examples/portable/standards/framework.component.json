@@ -1,0 +1,49 @@
+{
+  "appliesTo": [
+    "component"
+  ],
+  "format": "standard-contract",
+  "formatVersion": "draft-2",
+  "id": "framework.component",
+  "references": [
+    {
+      "description": "Illustrative source URL; never fetched.",
+      "id": "editorial.notes",
+      "url": "https://example.org/editorial-notes",
+      "version": "1.0.0"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "layer",
+      "level": "must",
+      "property": "layer",
+      "text": "Declare the component layer.",
+      "value": "component",
+      "verification": "equals"
+    },
+    {
+      "id": "utility-use",
+      "level": "must",
+      "text": "Use documented utility interfaces; do not depend on private implementation details.",
+      "verification": "manual"
+    }
+  ],
+  "specification": {
+    "id": "standard-contract.spec",
+    "path": "format.md",
+    "sha256": "16b12f5dec7f975a0fdab9ffe1bcccaf620ab27554c0d1ea3a211d79350188e8",
+    "version": "0.0.2"
+  },
+  "title": "Framework Component",
+  "uses": [
+    {
+      "description": "Public interfaces only; no utility implementation rules are inherited.",
+      "id": "framework.utility",
+      "path": "framework.utility.json",
+      "sha256": "dfe396672437edc27094ebcbd7b1337e4608570fc8948faa85e3e67588a1d3b0",
+      "version": "1.0.0"
+    }
+  ],
+  "version": "1.0.0"
+}

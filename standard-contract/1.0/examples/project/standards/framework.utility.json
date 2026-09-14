@@ -1,0 +1,32 @@
+{
+  "appliesTo": [
+    "utility"
+  ],
+  "format": "standard-contract",
+  "formatVersion": "1.0",
+  "id": "framework.utility",
+  "references": [
+    {
+      "description": "Illustrative source URL; never fetched.",
+      "id": "editorial.notes",
+      "url": "https://example.org/editorial-notes",
+      "version": "1.0.0"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "public-contract",
+      "level": "must",
+      "text": "Document public inputs, outputs and failure conditions.",
+      "verification": "manual"
+    }
+  ],
+  "specification": {
+    "id": "standard-contract.spec",
+    "path": "format.md",
+    "sha256": "0b960d761c2f7454373666d64938c1937f4c72e87f586fdb217bbecbced15836",
+    "version": "1.0.0"
+  },
+  "title": "Framework Utility",
+  "version": "1.0.0"
+}

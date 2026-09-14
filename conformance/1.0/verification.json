@@ -1,0 +1,31 @@
+{
+  "candidate": "1.0.0-rc.1",
+  "wireVersion": "1.0",
+  "candidateLockSha256": "1a5010469988a9fcdaf76799e30897130e62cc16a821933109d67a160655aab3",
+  "date": "2026-09-12",
+  "status": "local-pass-product-evidence-pending",
+  "checks": {
+    "repositoryTests": {"status": "pass", "tests": 137},
+    "developmentDirectionExperiments": {"status": "pass", "tests": 10},
+    "candidate01And02Regression": {"status": "pass", "candidate02Files": 101},
+    "candidate10Integrity": {"status": "pass", "files": 63},
+    "repositoryPolicy": {"status": "pass"},
+    "pythonJavaScriptSharedCorpus": {"status": "pass"},
+    "actorFilteredHttps": {"status": "pass", "trustedTestCertificate": true},
+    "largeCatalog": {"status": "pass", "items": 100000, "catalogsFetched": 1, "catalogsOmitted": 499},
+    "migrationAndJointExport": {"status": "pass"}
+  },
+  "processBoundary": {
+    "status": "not-claimed",
+    "reason": "The optional SIMAI Project Technology inventory and typed process evidence are not configured for this independent standard repository. The final-response checker was run with technology evidence and rejected that process claim; no graph or policy was changed to manufacture a pass."
+  },
+  "claims": {
+    "newRequiredCoreFields": 0,
+    "newRequiredProfiles": 0,
+    "businessExecution": "not-run",
+    "publicRelease": "not-run",
+    "independentExternalAdoption": "not-demonstrated",
+    "docaraPilot": "pending",
+    "larenaPilot": "pending"
+  }
+}

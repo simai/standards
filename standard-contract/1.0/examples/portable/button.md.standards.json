@@ -1,0 +1,14 @@
+{
+  "format": "standard-contract-declaration",
+  "formatVersion": "1.0",
+  "kind": "api-page",
+  "standards": [
+    {
+      "id": "docs.api",
+      "path": "standards/docs.api.json",
+      "sha256": "2651227c7816d3f5ea0f373d1d4497dbbfc1c95406a7d52eea47047499dfa4ae",
+      "version": "1.0.0"
+    }
+  ],
+  "target": "button.md"
+}

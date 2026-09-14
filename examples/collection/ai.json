@@ -1,0 +1,23 @@
+{
+  "format": "ai-first",
+  "formatVersion": "0.1",
+  "document": "manifest",
+  "revision": "2026-09-09.1",
+  "resource": {
+    "id": "urn:example:collection",
+    "name": "Example Product Collection",
+    "description": "Example resource for testing discovery and exact knowledge retrieval.",
+    "language": "en",
+    "scope": "./",
+    "publisher": {
+      "name": "Example Publisher"
+    }
+  },
+  "routes": [
+    {
+      "scope": "./editor/",
+      "href": "./editor/ai.json",
+      "description": "Example Editor documentation."
+    }
+  ]
+}

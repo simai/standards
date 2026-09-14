@@ -1,0 +1,32 @@
+{
+  "checker": {
+    "id": "example.review",
+    "version": "1.0.0"
+  },
+  "format": "standard-contract-evidence",
+  "formatVersion": "lifecycle-draft-1",
+  "normativeSetSha256": "c3fb5bf69463ae3d7acb927ae76ce696667ee8fc70758dd6072913fcc3043783",
+  "objectSha256": "55bd3e076bba0a6e9773a609d8a43812aa11bd3dd13ae67e2ece746cf46b9935",
+  "results": [
+    {
+      "evidence": [],
+      "requirement": "docs.api#layout",
+      "status": "not-checked"
+    },
+    {
+      "evidence": [],
+      "requirement": "docs.api#parameters",
+      "status": "not-checked"
+    },
+    {
+      "evidence": [],
+      "requirement": "docs.foundation#language",
+      "status": "not-checked"
+    },
+    {
+      "evidence": [],
+      "requirement": "docs.foundation#links",
+      "status": "not-checked"
+    }
+  ]
+}

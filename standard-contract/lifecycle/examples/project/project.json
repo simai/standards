@@ -1,0 +1,42 @@
+{
+  "bindings": [
+    {
+      "kind": "api-page",
+      "prefix": "docs/api",
+      "standards": [
+        {
+          "id": "docs.api",
+          "path": "standards/docs.api.json",
+          "sha256": "2651227c7816d3f5ea0f373d1d4497dbbfc1c95406a7d52eea47047499dfa4ae",
+          "version": "1.0.0"
+        }
+      ]
+    },
+    {
+      "kind": "tutorial-page",
+      "prefix": "docs/tutorials",
+      "standards": [
+        {
+          "id": "docs.tutorial",
+          "path": "standards/docs.tutorial.json",
+          "sha256": "81c5c85c27637df47a7d4d1e468cb8890e4b9ccc9096d6d3fef43157342042db",
+          "version": "1.0.0"
+        }
+      ]
+    },
+    {
+      "kind": "component",
+      "prefix": "src/components",
+      "standards": [
+        {
+          "id": "framework.component",
+          "path": "standards/framework.component.json",
+          "sha256": "5930139ed62a159944e00a866c80d18095ca5bcc0e55053c9c891695dbd296df",
+          "version": "1.0.0"
+        }
+      ]
+    }
+  ],
+  "format": "standard-contract-project",
+  "formatVersion": "1.0"
+}

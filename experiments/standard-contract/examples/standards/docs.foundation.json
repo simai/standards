@@ -1,0 +1,27 @@
+{
+  "format": "standard-contract",
+  "formatVersion": "draft-1",
+  "id": "docs.foundation",
+  "version": "1.0.0",
+  "title": "Docs Foundation",
+  "appliesTo": [
+    "api-page",
+    "tutorial-page"
+  ],
+  "requirements": [
+    {
+      "id": "language",
+      "level": "must",
+      "text": "The page language must be English.",
+      "verification": "equals",
+      "property": "language",
+      "value": "en"
+    },
+    {
+      "id": "links",
+      "level": "must",
+      "text": "Every referenced internal page must exist in the built site.",
+      "verification": "manual"
+    }
+  ]
+}

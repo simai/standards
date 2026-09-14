@@ -1,0 +1,38 @@
+{
+  "changes": [
+    {
+      "replacement": {
+        "path": "proposals/patch/standard.json",
+        "sha256": "df208f65d7c403daa4d1d6cba836560dd7baa9808c9d28d8a4aef1962106e593"
+      },
+      "source": {
+        "id": "docs.foundation",
+        "path": "standards/docs.foundation.json",
+        "sha256": "aff9ca8ff3f5d0dcce45dd7d60b3149871a18f223bc2ab49aadd66eaca358c35",
+        "version": "1.0.0"
+      },
+      "targetVersion": "1.0.1"
+    },
+    {
+      "source": {
+        "id": "docs.api",
+        "path": "standards/docs.api.json",
+        "sha256": "2651227c7816d3f5ea0f373d1d4497dbbfc1c95406a7d52eea47047499dfa4ae",
+        "version": "1.0.0"
+      },
+      "targetVersion": "1.0.1"
+    },
+    {
+      "source": {
+        "id": "docs.tutorial",
+        "path": "standards/docs.tutorial.json",
+        "sha256": "81c5c85c27637df47a7d4d1e468cb8890e4b9ccc9096d6d3fef43157342042db",
+        "version": "1.0.0"
+      },
+      "targetVersion": "1.0.1"
+    }
+  ],
+  "format": "standard-contract-update-plan",
+  "formatVersion": "1.0",
+  "sourceProjectSha256": "cd2861924a370631c5a89533f9728d6a6c4f0528c40fe53809b5749d7d0b1aad"
+}

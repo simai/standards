@@ -1,0 +1,148 @@
+{
+  "status": "local-candidate-ready-with-process-caveat",
+  "candidateFrozen": true,
+  "wireVersion": "0.2",
+  "date": "2026-09-09",
+  "tests": {
+    "count": 99,
+    "legacy01": 49,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "seconds": 8.688,
+    "command": "AI_FIRST_NODE=<working-node> python -m unittest discover -s tests -v"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "platform": "Darwin",
+    "architecture": "arm64"
+  },
+  "baseline01": {
+    "files": 63,
+    "unchanged": 62,
+    "orchestrationChange": {
+      "path": ".github/workflows/validate.yml",
+      "reason": "Keep the legacy job restricted to its original 49 tests; new 0.2 dependencies and checks use a separate job."
+    },
+    "originalBytesPreservedInLocalRecoveryCopy": true
+  },
+  "checks": {
+    "repository": "pass",
+    "migration": "pass",
+    "jointExport": "pass",
+    "openapiLocatorBinding": "pass",
+    "pythonJavaScriptSharedCases": 12,
+    "pythonJavaScriptLocalHTTPS": "pass",
+    "synthetic100kSelectiveHTTP": "pass",
+    "candidateIntegrity": "pass",
+    "candidateFiles": 101,
+    "pilotReturnInspector": "pass"
+  },
+  "pending": [
+    "actual Docara/Larena pilot receipts and scenario review",
+    "compatibility acceptance of returned publications",
+    "final pilot-backed discussion package update",
+    "federation process acceptance gaps",
+    "hosted CI execution (not run locally)"
+  ],
+  "productPilots": {
+    "docara": "not-started",
+    "larena": "not-started"
+  },
+  "files": [
+    {
+      "path": "docs/0.2/discussion-package.md",
+      "sha256": "0169f115fc8875046b18f6c8803eefb9152b30c13a48c68abc8bee81e469f2c5"
+    },
+    {
+      "path": "docs/0.2/publishing-and-migration.md",
+      "sha256": "70c9958095c1a033aab4455235422c0b7e707e23890bb6788dff3341214eda97"
+    },
+    {
+      "path": "requirements-0.2.txt",
+      "sha256": "4c2355efda0785f076e7f0f6b5d5342ad9eb3c5b1479497024e519353e3b8f5b"
+    },
+    {
+      "path": "schemas/0.2/catalog.schema.json",
+      "sha256": "8869aef5a67f45d3d78ef4cf2a35e3394820c7918903fd1c66b00d2a21b1ba9c"
+    },
+    {
+      "path": "schemas/0.2/manifest.schema.json",
+      "sha256": "510e1e88b8bf776f12ee0dd1319bb4aa0b597d5a8d5e7a44422106fd0b765d9c"
+    },
+    {
+      "path": "spec/0.2/core.md",
+      "sha256": "193faf243966268056518cd5fac86d3350e0c423905e570f65cabf54068e2ed9"
+    },
+    {
+      "path": "spec/0.2/discovery-and-transport.md",
+      "sha256": "7246cce5f599ff5cc435ac4a45a138d71dc80b761c152504363b1363a7fbb29f"
+    },
+    {
+      "path": "tests/test_02_contracts.py",
+      "sha256": "1d11fb93caa5c8070b7d297c9cc898ccceef34802b83d4c9876274cd863c0a6a"
+    },
+    {
+      "path": "tests/test_02_core.py",
+      "sha256": "d196f920dda3c37ea1870191ea8837d819c23934870a5965d6f2173c4c7a64ba"
+    },
+    {
+      "path": "tests/test_02_interop.py",
+      "sha256": "69d4f155001b0b151930da4a373cb6ad0da464976e6b3376a94ee8280d7c1b37"
+    },
+    {
+      "path": "tests/test_02_publish.py",
+      "sha256": "d56cbb11606e2fc2bb5888ce370b89bf617115e03f4abf2aaa354d2d43b884d6"
+    },
+    {
+      "path": "tests/test_02_reader.py",
+      "sha256": "034585ce79e614e13258218c366f38eb2b62bbc8a42f05b48066489e1b2d237a"
+    },
+    {
+      "path": "tests/test_02_transport.py",
+      "sha256": "d4bf53a538c6e19f8523d41e70a262af89ff969f6994463fc83140ec1b93544d"
+    },
+    {
+      "path": "tools/aifirst02.mjs",
+      "sha256": "4c463a15a53beb4159b506fb55a88c1fd9328f66c356edee4dc439594156adff"
+    },
+    {
+      "path": "tools/aifirst02.py",
+      "sha256": "e687ec14395e914ecefdac119f40fb0c8daebfa74e57da0115c9c0e8a52a4ee2"
+    },
+    {
+      "path": "tools/aifirst02_contracts.py",
+      "sha256": "c74b57837339ff143db8ccf18072f427ed9af8995f15c7f234b15f720cba2e29"
+    },
+    {
+      "path": "tools/aifirst02_core.py",
+      "sha256": "01f89dbe23897721c6ac011040a1b91c395f4549fc56cfa09c2283d12490a1ce"
+    },
+    {
+      "path": "tools/aifirst02_publish.py",
+      "sha256": "ae35ddd1e85c2557c73eb5881871540c9450c75e892964c29142bb6bf079989b"
+    },
+    {
+      "path": "tools/aifirst02_transport.py",
+      "sha256": "e6082007e7f05d247f0ab04b7f521b983afb3f4d5bc652dfa0c9ab2b1a4a52ca"
+    },
+    {
+      "path": "tools/benchmark02.py",
+      "sha256": "25862f1b44afd41387ca0edec5a982ac137c631dcb723866d877de9065aeb8fb"
+    }
+  ],
+  "candidate": "0.2.0-rc.1",
+  "candidateLockSha256": "7ac995ceae305c20189e668d552e98502a0c5fe04bbbbee47bb80c1c686f6ef2",
+  "repositoryProcess": {
+    "status": "fail",
+    "evidenceFormat": "typed-v2-separate-from-product-tests",
+    "prior01EvidencePreserved": true,
+    "outstanding": [
+      "specialized process selection",
+      "owner context compilation",
+      "reuse inventory recognition",
+      "project technology sync"
+    ],
+    "meaning": "Not a product conformance failure; not a process acceptance claim."
+  }
+}

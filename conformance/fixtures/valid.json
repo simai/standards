@@ -1,0 +1,41 @@
+{
+  "format": "ai-first",
+  "formatVersion": "0.1",
+  "document": "manifest",
+  "revision": "2026-09-09.1",
+  "resource": {
+    "id": "urn:example:fixture",
+    "name": "Fixture",
+    "description": "Example resource for testing discovery and exact knowledge retrieval.",
+    "language": "en",
+    "scope": "./",
+    "publisher": {
+      "name": "Example Publisher"
+    }
+  },
+  "items": [
+    {
+      "id": "urn:example:guide:fixture",
+      "kind": "knowledge",
+      "title": "Configure authentication",
+      "description": "Configure authentication for Example Editor 3.0.",
+      "language": "en",
+      "revision": "1",
+      "status": "published",
+      "source": "./guide.md",
+      "appliesTo": {
+        "product": "urn:example:editor",
+        "versions": [
+          "3.0"
+        ]
+      },
+      "representations": [
+        {
+          "href": "./guide.md",
+          "mediaType": "text/markdown",
+          "sha256": "b6ec164ed58ae54d1d1e7436b1128601bbf9bff3f914b77487e0af39b82864e7"
+        }
+      ]
+    }
+  ]
+}
