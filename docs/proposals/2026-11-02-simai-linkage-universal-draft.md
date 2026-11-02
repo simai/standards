@@ -6,7 +6,8 @@ Nothing here changes a published standard, a schema or a pin until it is
 published in `simai/standards`.
 
 Owner direction of 2026-11-02: the linkage standard becomes universal and its
-core lives in ai-first, next to Standard Contract. SIMAI Framework keeps its own
+core lives with Standard Contract in this repository, which becomes
+`simai/standards`. SIMAI Framework keeps its own
 rules as a profile. The first non-Framework users are the norm registry, the
 document templates and the client documents of `mirai-documents`.
 
@@ -108,8 +109,8 @@ A. **mirror-source** (must for such a source, new). When the units come from a
    source that publishes no passports itself (a legislature, a vendor's API, a
    third-party library), whoever keeps the passports is the **mirror**: it is
    named as the owner, each passport records where and when the content was
-   taken (`origin`, `retrieved_at`), and versions follow the candidate and
-   confirmed rule (14). The mirror never claims to be the source.
+   taken (`origin`, `retrieved_at`), and versions follow rule 14 whatever the
+   hash method. The mirror never claims to be the source.
 
 ### Time (profiles with the `dated` scheme, or that opt in)
 
@@ -203,18 +204,20 @@ A. **mirror-source** (must for such a source, new). When the units come from a
 | Units to files | a folder `passport.json`, or a central passport under `src/core/passports` whose `includes` claims files or whole folders (component folders included); longest claim wins, an equal claim is a defect | one norm per entry of `norms/<act>.yaml` | a template folder; a shared block file |
 | Semver surface | attributes, properties, events, slots, CSS variables, tokens, words, port intents | — | parameters, options, fields, parties, clause ids, checks |
 | Impact | major, or a journal entry asking for a change → action-needed with the instruction quoted; former name with its stop date | new edition of a `mandatory` norm a place `deviates` from or `restates` → action-needed; of a `default` norm → update-available | major → action-needed; minor or patch → update-available |
+| Constraint | caret range (`^x.y.z`) | in-force | caret range |
+| Release id | pair `ui-<12>`; package `pro-<12>` (`larena-<12>` a dated alias until 2027-01-01) | dated snapshot | `<name>-<12>` |
 | Formats | the three pinned schemas of ui-source by sha256 | core formats | core formats |
 | Consumers | Figma kit, docs, products | templates | client documents (document passport) |
 
 The Framework profile is exactly 1.0.0. Core requirements 2 and 3 (cross-source
 naming), 9, 11–15 and A do not apply to it: its profile is read from `schema`
 (`simai.framework.*` means `framework` 1.0.0), its anchors and force are absent,
-its versions are checked by construction (`git-files`). Its reconcile gains
-statuses but nothing a source must write. The profile follows ui-source as it
+its versions are checked by construction (`git-files`). Its reconcile reports the
+five 1.0.0 statuses; nothing new is written by a source or read by its reconcile. The profile follows ui-source as it
 stands, including central passports claiming whole folders (ui-source 2aa281a7);
 the 1.0.0 guidance text on that point is out of date and is not frozen here.
 
-## Related standards that could move to ai-first the same way
+## Related standards that could move to simai/standards the same way
 
 Reviewed: the ten Framework standards in `ui-source/contracts/standards`.
 
@@ -241,7 +244,8 @@ Reviewed: the ten Framework standards in `ui-source/contracts/standards`.
 
 ## Rollout proposed
 
-1. Owner's review of this draft.
+1. Owner's review of this draft — done 2026-11-02; Framework thread's second
+   review done (ui-control 0a164e3).
 2. Transfer and rename the repository to `simai/standards`, then publish the
    core `simai.linkage` 1.1.0 there (`standard-contract`
    envelope, core schemas, a reconcile reference implementation with fixtures for
