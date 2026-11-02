@@ -1,5 +1,5 @@
 {
-  "release": "1.1.0",
+  "release": "1.1.1",
   "standards": {
     "ai-first": "1.0.0",
     "standard-contract": "1.0.0",
@@ -41,8 +41,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "54a34b9ca237f7c14e62bd184d7b5341f266786808ffe3527cd945b423b488ba",
-      "bytes": 1227
+      "sha256": "099b9e8e5a5a85219b2cf8937729f71ccafe18dc35ef43c2cf20c38a5411bd1a",
+      "bytes": 1696
     },
     {
       "path": "CONTRIBUTING.md",
@@ -71,7 +71,7 @@
     },
     {
       "path": "RELEASE-STATUS.md",
-      "sha256": "cda7e4b64cc5c2c28f3c0cd0b8f0dda7ebbb1f44892d956bfa7a64d7d465d312",
+      "sha256": "33d185db0f223c5c987835d262c62be202a719112c1ce25996f8ab8071dc5ac1",
       "bytes": 908
     },
     {
@@ -81,7 +81,7 @@
     },
     {
       "path": "VERSION",
-      "sha256": "1575e1af4a95f12f70b4ee6a6adce8160953d93ea17dc2611b90883ccc3ad3b8",
+      "sha256": "cc52f678848b814373757b460383bf61960e4943c203735adde0a350b3e50989",
       "bytes": 6
     },
     {
@@ -1191,8 +1191,8 @@
     },
     {
       "path": "docs/releases/README.md",
-      "sha256": "071dd1aa7a77bd1a60204410071b888644d8f3c8becd1d163510ab87fec26b71",
-      "bytes": 168
+      "sha256": "d7fc62c561d091d2af85945ff15f884603c1a4155a5ae59a6bb2cbde140c83b9",
+      "bytes": 219
     },
     {
       "path": "docs/releases/adoption.md",
@@ -1213,6 +1213,11 @@
       "path": "docs/releases/v1.1.0.md",
       "sha256": "9469d715b9e1961120de9c61a2b62a25c97e59bf5423b3431a257847dcd047fc",
       "bytes": 1760
+    },
+    {
+      "path": "docs/releases/v1.1.1.md",
+      "sha256": "cee7d10c7934172d67a4c4012420502ffd4b21d2cc33944586392f9125bdd845",
+      "bytes": 1021
     },
     {
       "path": "docs/releases/verification.json",
@@ -2481,8 +2486,8 @@
     },
     {
       "path": "standards/linkage.py",
-      "sha256": "267d29ae443fa1536b954879eb77aa20f7170461abb537fc990005a3bd875e1b",
-      "bytes": 15959
+      "sha256": "fbc73271f6d47fc9cb793ec57976b3eb55958fc05fcd5d1444c598f1538442dc",
+      "bytes": 16841
     },
     {
       "path": "standards/pinned/change-journal-1.2.0.schema.json",
@@ -2621,7 +2626,7 @@
     },
     {
       "path": "tests/test_release.py",
-      "sha256": "042fa47d60adc2d4106a1b4661583da632b1cb1483f2525c502625e41b98b667",
+      "sha256": "76c5f42883f2076b9df5fb5a42efceb1978c6b66fc586a0f4f31b283823dcc88",
       "bytes": 1896
     },
     {
@@ -2631,8 +2636,8 @@
     },
     {
       "path": "tests/test_standards.py",
-      "sha256": "dd186bc062525c690ccb9f7c6a3f425a7eb569f439c85126cdb06b1d022945dd",
-      "bytes": 9888
+      "sha256": "d8067239963c90812e9c497870fd974b3715a4578c59ea8797ab09eb94c9a087",
+      "bytes": 11949
     },
     {
       "path": "tools/aifirst.py",
@@ -2746,7 +2751,7 @@
     },
     {
       "path": "tools/verify_release.py",
-      "sha256": "03098562ee4448a852f2374d8dc7633e57ba6d160a44b45d07b7347abb52accd",
+      "sha256": "4d5dc595c19eb625b27353aaeb3f20ead525b2b27a1e8c45e14c083866acfb60",
       "bytes": 1758
     }
   ]

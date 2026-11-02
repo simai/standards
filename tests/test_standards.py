@@ -197,6 +197,47 @@ class Reconcile(unittest.TestCase):
         self.assertEqual('missing', self.documents('2026-11-02', record)['contract 15/2026']['status'])
 
 
+class AnchorsAndRepeal(unittest.TestCase):
+    def setUp(self):
+        self.templates = load(EX / 'templates/inventory.json')
+        self.norms = load(EX / 'norms/inventory.json')
+        for u in self.norms['units']:
+            u['checked'] = '2026-11-02'
+        self.record = load(EX / 'documents/usage-record.json')
+        self.record['places'] = self.record['places'][:1]
+
+    def statuses(self, anchor, as_of):
+        place = self.record['places'][0]
+        place['anchor'] = anchor
+        return linkage.reconcile(self.record, [self.templates, self.norms], as_of=as_of)['places'][0]
+
+    def test_place_with_anchor_follows_only_that_anchor(self):
+        self.assertEqual('action-needed', self.statuses('payout.cash', '2027-04-01')['status'])
+        self.assertEqual('current', self.statuses('interest.free', '2027-04-01')['status'])
+
+    def test_anchors_of_a_dependency_are_not_followed(self):
+        wrapper = {'id': 'ru/pack', 'kind': 'template', 'version': '1.0.0', 'content_sha256': 'd' * 64,
+                   'dependencies': [{'id': 'ru/loan', 'range': '^1.0.0'}]}
+        self.templates['units'].append(wrapper)
+        self.record['places'][0].update(unit='ru/pack', version='1.0.0', content_sha256='d' * 64)
+        place = linkage.reconcile(self.record, [self.templates, self.norms], as_of='2027-04-01')['places'][0]
+        self.assertEqual('current', place['status'])
+
+    def test_edition_after_the_place_without_an_earlier_one(self):
+        for u in self.norms['units']:
+            if u['id'] == 'ru/gk/808':
+                del u['history']
+        self.assertEqual('action-needed', self.statuses('payout.cash', '2027-04-01')['status'])
+
+    def test_repealed_norm_needs_action(self):
+        for u in self.norms['units']:
+            if u['id'] == 'ru/gk/814':
+                u['edition']['effective_to'] = '2027-01-01'
+        place = self.statuses('purpose.target', '2027-04-01')
+        self.assertEqual('action-needed', place['status'])
+        self.assertEqual('not in force since 2027-01-01', place['instruction'])
+
+
 class CommandLine(unittest.TestCase):
     def test_validate_examples(self):
         with contextlib.redirect_stdout(io.StringIO()):

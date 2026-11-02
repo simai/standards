@@ -201,13 +201,21 @@ class Reconciler:
     def _journal_for(self, uid, from_version):
         return [r for r in self.journal if r['stage'] == 'compat' and any(i.get('unit') == uid or i.get('component') == uid for i in r['items'])]
 
-    def _deps(self, uid, made_on, path, seen, out):
-        """Follow declared dependencies (foundations within a source, chains across sources)."""
+    def _deps(self, uid, made_on, path, seen, out, anchor=None):
+        """Follow declared dependencies (foundations within a source, chains across sources).
+
+        Anchors are followed from the place only: a place with an anchor follows that
+        anchor's dependencies, a place without one all of them; the anchors of a
+        dependency are not followed (the consumer names the parts it uses in places
+        of its own)."""
         unit = self.units.get(uid)
         if not unit or uid in seen:
             return
+        from_place = not seen
         seen = seen | {uid}
-        for dep in unit.get('dependencies', []) + [d for a in unit.get('anchors', []) for d in a.get('dependencies', [])]:
+        anchored = [d for a in unit.get('anchors', []) if from_place and (anchor is None or a['id'] == anchor)
+                    for d in a.get('dependencies', [])]
+        for dep in unit.get('dependencies', []) + anchored:
             target = self.units.get(dep['id'])
             hop = [dep['id'] + (f"#{dep['from']}" if dep.get('from') else '')] + path
             if target is None:
@@ -229,10 +237,15 @@ class Reconciler:
         then = _edition_on(unit, made_on) if made_on else None
         now = _edition_on(unit, self.as_of)
         found = []
-        if then and now and then['since'] != now['since']:
+        last = unit.get('edition') or {}
+        if not now and last.get('effective_to') and last['effective_to'] <= self.as_of:
+            # A norm no longer in force (repealed) needs action.
+            found.append({'status': 'action-needed', 'path': path, 'from_version': last['since'],
+                          'instruction': f"not in force since {last['effective_to']}"})
+        elif now and made_on and (then['since'] != now['since'] if then else now['since'] > made_on):
             status = 'unverified' if now.get('status') == 'candidate' else _impact(self.profiles.get(dep['id']), dep, unit, 'edition', [])
-            found.append({'status': status, 'path': path, 'from_version': then['since'], 'to_version': now['since'], 'effective_from': now['since'],
-                          'instruction': f"{now['by']}"})
+            found.append({'status': status, 'path': path, **({'from_version': then['since']} if then else {}),
+                          'to_version': now['since'], 'effective_from': now['since'], 'instruction': f"{now['by']}"})
         later = [e for e in [*unit.get('history', []), unit.get('edition') or {}] if e and e['since'] > self.as_of]
         for e in later:
             found.append({'status': 'unverified' if e.get('status') == 'candidate' else 'upcoming', 'path': path,
@@ -262,7 +275,7 @@ class Reconciler:
             if hits and hits[0].get('manual'):
                 entry['instruction'] = hits[0]['manual']
             results.append(entry)
-        self._deps(uid, p.get('made_on'), [uid, p['place']], set(), results)
+        self._deps(uid, p.get('made_on'), [uid, p['place']], set(), results, p.get('anchor'))
         if p.get('kept'):
             for r in results:
                 if r['status'] in ('update-available', 'action-needed'):

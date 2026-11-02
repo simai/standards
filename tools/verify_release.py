@@ -6,7 +6,7 @@ from pathlib import Path
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-RELEASE = '1.1.0'
+RELEASE = '1.1.1'
 STANDARDS = {'ai-first': '1.0.0', 'standard-contract': '1.0.0', 'standard-contract-lifecycle': '1.0.0', 'simai.linkage': '1.1.0', 'simai.change-lifecycle': '1.1.0'}
 
 def verify(root=ROOT):

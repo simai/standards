@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.1 — 2026-11-02
+
+- Reference reconcile (`standards/linkage.py`): a place with an anchor follows
+  only that anchor's dependencies and the anchors of a dependency are not
+  followed, so a law change marks only the documents that contain the affected
+  clause; a norm no longer in force needs action; an edition that took effect
+  after the place was made is found when no earlier edition is recorded.
+- The two standards stay at 1.1.0; their text is unchanged.
+
 ## 1.1.0 — 2026-11-02
 
 - Add `simai.linkage` 1.1.0: a universal core for unit passports, release
