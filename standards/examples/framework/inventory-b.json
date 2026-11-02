@@ -1,0 +1,28 @@
+{
+  "schema": "simai.framework.unit-inventory",
+  "schema_version": 1,
+  "source": "simai/ui-source",
+  "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "release": "ui-bbbbbbbbbbbb",
+  "units": [
+    {
+      "id": "tokens.colour",
+      "kind": "tokens",
+      "version": "1.1.0",
+      "content_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "dependencies": []
+    },
+    {
+      "id": "component.accordion",
+      "kind": "component",
+      "version": "1.0.0",
+      "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "dependencies": [
+        {
+          "id": "tokens.colour",
+          "range": "^1.0.0"
+        }
+      ]
+    }
+  ]
+}

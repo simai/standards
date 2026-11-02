@@ -1,0 +1,391 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schema/unit-passport.v1.json",
+  "x-simai-version": "1.0.0",
+  "title": "SIMAI unit passport",
+  "description": "The identity card of one unit a source publishes (standard simai.linkage, core). A Framework passport (simai.framework.unit-passport 1.0.0) is read as this format with profile framework.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/core"
+    },
+    {
+      "$ref": "https://simai.io/schema/framework/unit-passport.v1.json"
+    }
+  ],
+  "$defs": {
+    "core": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "schema_version",
+        "profile",
+        "id",
+        "kind",
+        "version",
+        "version_scheme",
+        "owner",
+        "content_sha256",
+        "hash_method",
+        "dependencies"
+      ],
+      "properties": {
+        "schema": {
+          "const": "simai.unit-passport"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "profile": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "version"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            },
+            "version": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+            }
+          },
+          "description": "The profile and its version (simai.linkage profile-declared)."
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+          "description": "An id in the grammar of the profile: <kind>.<name> (framework) or a / path (norms, templates)."
+        },
+        "kind": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "In the profile scheme: semver x.y.z, a dated edition (its since date) or a sequence number."
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "version_scheme": {
+          "enum": [
+            "semver",
+            "dated",
+            "sequence"
+          ]
+        },
+        "edition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "since",
+            "by"
+          ],
+          "properties": {
+            "since": {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+            },
+            "by": {
+              "type": "string",
+              "minLength": 1
+            },
+            "announced": {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+            },
+            "effective_to": {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+            },
+            "status": {
+              "enum": [
+                "candidate",
+                "confirmed"
+              ]
+            },
+            "found_by": {
+              "type": "string"
+            },
+            "confirmed_by": {
+              "type": "string"
+            }
+          },
+          "description": "A version under the dated scheme: the date it takes effect and the act or record that introduced it."
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Who keeps this passport: the source, or the mirror of a source that publishes none."
+        },
+        "mirror": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "origin",
+            "retrieved_at"
+          ],
+          "properties": {
+            "origin": {
+              "type": "string",
+              "minLength": 1
+            },
+            "retrieved_at": {
+              "type": "string",
+              "minLength": 10
+            }
+          },
+          "description": "simai.linkage A: where and when a mirror took the content."
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "files": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "hash_method": {
+          "enum": [
+            "git-files",
+            "normalized-text"
+          ]
+        },
+        "normalization": {
+          "type": "string",
+          "description": "The published rule a normalized-text hash follows."
+        },
+        "force": {
+          "enum": [
+            "mandatory",
+            "default",
+            "mixed"
+          ]
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z0-9_-]+)*$"
+              },
+              "content_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "dependencies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 260,
+                      "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+                      "description": "An id, or <source>:<id> for a unit of another source."
+                    },
+                    "range": {
+                      "type": "string",
+                      "pattern": "^\\^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+                    },
+                    "constraint": {
+                      "enum": [
+                        "in-force",
+                        "exact"
+                      ]
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "from": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z0-9_-]+)*$"
+                    },
+                    "relation": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z-]*$"
+                    },
+                    "manual": {
+                      "const": true
+                    }
+                  },
+                  "oneOf": [
+                    {
+                      "required": [
+                        "range"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "constraint"
+                      ]
+                    }
+                  ],
+                  "description": "A dependency with a constraint in the profile scheme: a caret range, the edition in force on the reference date, or an exact version."
+                }
+              }
+            }
+          }
+        },
+        "checked": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 260,
+                "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+                "description": "An id, or <source>:<id> for a unit of another source."
+              },
+              "range": {
+                "type": "string",
+                "pattern": "^\\^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+              },
+              "constraint": {
+                "enum": [
+                  "in-force",
+                  "exact"
+                ]
+              },
+              "version": {
+                "type": "string"
+              },
+              "from": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z0-9_-]+)*$"
+              },
+              "relation": {
+                "type": "string",
+                "pattern": "^[a-z][a-z-]*$"
+              },
+              "manual": {
+                "const": true
+              }
+            },
+            "oneOf": [
+              {
+                "required": [
+                  "range"
+                ]
+              },
+              {
+                "required": [
+                  "constraint"
+                ]
+              }
+            ],
+            "description": "A dependency with a constraint in the profile scheme: a caret range, the edition in force on the reference date, or an exact version."
+          }
+        },
+        "former_ids": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "journal"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 260,
+                "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+                "description": "An id, or <source>:<id> for a unit of another source."
+              },
+              "journal": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "version_scheme": {
+                "const": "semver"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "version": {
+                "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "version_scheme": {
+                "const": "dated"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "edition"
+            ],
+            "properties": {
+              "version": {
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hash_method": {
+                "const": "normalized-text"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "normalization"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

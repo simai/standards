@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schema/usage-record.v1.json",
+  "x-simai-version": "1.0.0",
+  "title": "SIMAI usage record",
+  "description": "What a consumer uses and where, kept by the consumer (simai.linkage consumer-keeps-a-record). A document passport of mirai-documents is one.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "consumer",
+    "sources",
+    "places"
+  ],
+  "properties": {
+    "schema": {
+      "const": "simai.usage-record"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "consumer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source",
+          "release"
+        ],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "release": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "places": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "place",
+          "unit",
+          "version",
+          "content_sha256"
+        ],
+        "properties": {
+          "place": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Where the consumer uses the unit: a file, a screen, a Figma node, a contract number."
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 260,
+            "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+            "description": "An id, or <source>:<id> for a unit of another source."
+          },
+          "version": {
+            "type": "string"
+          },
+          "content_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "anchor": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z0-9_-]+)*$"
+          },
+          "relation": {
+            "type": "string"
+          },
+          "made_on": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          },
+          "kept": {
+            "type": "boolean",
+            "description": "simai.linkage valid-under-its-version: made under this version on purpose (a signed contract)."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "format": "standard-contract",
+  "formatVersion": "1.0",
+  "id": "simai.linkage",
+  "version": "1.1.0",
+  "title": "SIMAI Linkage",
+  "appliesTo": [
+    "simai.unit",
+    "simai.release",
+    "simai.consumer",
+    "simai.framework.unit",
+    "simai.framework.release",
+    "simai.framework.component-package",
+    "simai.framework.consumer"
+  ],
+  "requirements": [
+    {
+      "id": "every-unit-has-a-passport",
+      "level": "must",
+      "text": "Every unit a source publishes has a passport: a stable id, a version, its owner and what it is made of. A unit without a passport is not published; every content file of a source belongs to exactly one unit, by the rule of the profile.",
+      "verification": "manual",
+      "guidance": "Framework: a folder passport.json, or a central passport under src/core/passports whose includes claims files or whole folders; the longest claim wins and an equal claim is a defect. Held by ui-source scripts/linkage.mjs passports --check."
+    },
+    {
+      "id": "profile-declared",
+      "level": "must",
+      "text": "Every passport, inventory and change report names its profile and the profile version, or implies it by a profile-specific schema id. A reader that does not know the profile still reads the core fields and says it cannot judge the rest.",
+      "verification": "manual",
+      "guidance": "simai.framework.* schema ids imply profile framework 1.0.0; nothing is added to Framework files."
+    },
+    {
+      "id": "id-grammar-by-profile",
+      "level": "must",
+      "text": "An id follows the grammar of its profile: <kind>.<name> in the Framework, a / path (ru/gk/810, ru/loan) in the norms and templates profiles. Ids are unique within a source. In core formats a unit of another source is named <source>:<id>.",
+      "verification": "manual",
+      "guidance": "The Framework profile names cross-source dependencies by bare id, resolved through the inventory of the pinned release."
+    },
+    {
+      "id": "id-never-changes",
+      "level": "must",
+      "text": "An id is never reused or silently renamed. A rename or renumbering is a new id plus a dated former name in the change journal (simai.change-lifecycle), and the passport of the new id names the old one in former_ids.",
+      "verification": "manual"
+    },
+    {
+      "id": "content-hash",
+      "level": "must",
+      "text": "The passport carries one SHA-256 over the content of the unit. The profile names the method: git-files (for each committed file in ascending path order its path, a zero byte, its length in decimal, a zero byte and its bytes, read from git, not the working tree) or normalized-text (text taken from a named source at a recorded time and normalized by a published rule).",
+      "verification": "manual",
+      "guidance": "Reference: standards/linkage.py hash_git_files and hash_normalized_text (rule simai.text/1)."
+    },
+    {
+      "id": "version-scheme-by-profile",
+      "level": "must",
+      "text": "The version follows the scheme of the profile. semver: major.minor.patch, patch for a fix that changes no public surface, minor for an addition that breaks nothing, major for a change a consumer has to act on; the profile defines the public surface. dated: an edition with the date it takes effect and the act or record that introduced it. sequence: an integer that only grows.",
+      "verification": "manual",
+      "guidance": "Framework public surface: attributes, properties, events, slots, CSS variables, tokens, words, port intents. Templates: parameters, options, fields, parties, clause ids, checks."
+    },
+    {
+      "id": "hash-moves-version",
+      "level": "must",
+      "text": "If the content hash changes, the version changes. A release whose unit hash differs from the previous release while its version is the same is refused by the release gate.",
+      "verification": "manual",
+      "guidance": "Reference: standards/linkage.py compare reports hash-moved-without-version and version-went-back."
+    },
+    {
+      "id": "dependencies-declared",
+      "level": "must",
+      "text": "The passport names the units it depends on, including the shared foundations it reads, each with a constraint in the profile scheme: a caret range (^x.y.z), in-force (the edition in force on the reference date) or exact. A dependency the content uses but the passport omits is a defect found by a check, not by a consumer. Where the profile has them, a dependency may name the anchor that depends (from) and the relation (relies, restates, details, deviates).",
+      "verification": "manual",
+      "guidance": "The Framework uses caret ranges only and one implicit relation."
+    },
+    {
+      "id": "anchors-declared",
+      "level": "should",
+      "text": "A unit that others depend on in part, or whose parts depend on different units, lists its anchors with stable ids under the same never-reuse rule.",
+      "verification": "manual",
+      "guidance": "Templates: clauses [id: ...] and sections {#...}. Does not apply to the Framework profile."
+    },
+    {
+      "id": "force-declared",
+      "level": "may",
+      "text": "A unit may state its force for consumers: mandatory, default (consumers may deviate) or mixed. Profiles use it in their impact rule.",
+      "verification": "manual",
+      "guidance": "Norms: imperative is mandatory, dispositive is default."
+    },
+    {
+      "id": "mirror-source",
+      "level": "must",
+      "text": "When units come from a source that publishes no passports itself (a legislature, a vendor API, a third-party library), whoever keeps the passports is the mirror: it is named as the owner, each passport records where and when the content was taken, and its versions follow the candidate-then-confirmed rule whatever the hash method. The mirror never claims to be the source.",
+      "verification": "manual",
+      "guidance": "Does not apply to the Framework profile."
+    },
+    {
+      "id": "effective-dates",
+      "level": "must",
+      "text": "A version under the dated scheme carries the date it takes effect and may carry the date it was announced and the date it stops; other schemes may. A version taking effect in the future is published in the inventory as upcoming.",
+      "verification": "manual",
+      "guidance": "Does not apply to the Framework profile."
+    },
+    {
+      "id": "reconcile-as-of",
+      "level": "must",
+      "text": "Reconcile takes a reference date, today by default. A place is judged against the version in force on that date; a later version already announced is reported as upcoming.",
+      "verification": "manual",
+      "guidance": "Does not apply to the Framework profile, whose reconcile reports the five 1.0.0 statuses."
+    },
+    {
+      "id": "valid-under-its-version",
+      "level": "must",
+      "text": "A place may be marked as made under a version on purpose, such as a signed contract or a shipped release. Reconcile then reports kept instead of update-available or action-needed; the place is judged again only when it is changed or issued again.",
+      "verification": "manual",
+      "guidance": "Does not apply to the Framework profile."
+    },
+    {
+      "id": "candidate-then-confirmed",
+      "level": "must",
+      "text": "A version found by an automatic check of a source enters the inventory as a candidate with what found it; a person or a stated rule confirms it. Reconcile reports places affected by a candidate as unverified, not action-needed. Applies to units hashed by normalized-text and to mirrors.",
+      "verification": "manual",
+      "guidance": "Does not apply to the Framework profile."
+    },
+    {
+      "id": "unverified-is-visible",
+      "level": "must",
+      "text": "A unit hashed by normalized-text whose versions were never compared with its source says so (checked absent); reconcile shows the places that rest on it as unverified, and a gate may refuse it.",
+      "verification": "manual",
+      "guidance": "Does not apply to the Framework profile."
+    },
+    {
+      "id": "inventory-per-release",
+      "level": "must",
+      "text": "Every release publishes an inventory: every unit with id, version and content hash, and the release identity. For the dated scheme a release is a dated snapshot of the registry. The inventory travels with the release; additions to an existing release lock keep its fields.",
+      "verification": "manual",
+      "guidance": "Framework release ids: pair ui-<12>; package pro-<12> (larena-<12> a dated alias until 2027-01-01)."
+    },
+    {
+      "id": "inventory-is-complete",
+      "level": "must",
+      "text": "The inventory lists every unit the release carries; content in the release that belongs to no unit is a defect.",
+      "verification": "manual"
+    },
+    {
+      "id": "inventories-compare",
+      "level": "must",
+      "text": "Any two inventories of one source compare to a change report: added, removed, changed (from-version, to-version, the step, the journal entries in between and the anchors that moved), and the units whose dependencies changed. The report is data and is published with the release.",
+      "verification": "manual",
+      "guidance": "Reference: standards/linkage.py compare."
+    },
+    {
+      "id": "journal-per-version",
+      "level": "must",
+      "text": "Each version of a unit has a journal entry: what changed and, for a minor or major, what a consumer does about it. The entry is data, not only prose; renames and removals use the change journal of simai.change-lifecycle. For a law edition the entry says what changed, quoted from the amending act.",
+      "verification": "manual"
+    },
+    {
+      "id": "consumer-keeps-a-record",
+      "level": "must",
+      "text": "A consumer that wants to know what is out of date keeps a usage record: the source and release it was last brought up to, and for each place it uses a unit the unit id, the version and the content hash it was made against, and where the profile has them the anchor, the relation and the reference date the place was made on.",
+      "verification": "manual",
+      "guidance": "A document passport of mirai-documents is a usage record."
+    },
+    {
+      "id": "record-is-local-data",
+      "level": "must",
+      "text": "The record lives with the consumer, in the format this standard defines; the source never needs access to it. A consumer may keep it by hand, generate it from its content, or both.",
+      "verification": "manual"
+    },
+    {
+      "id": "foundations-count",
+      "level": "must",
+      "text": "Reconcile follows declared dependencies. Within a source, a place that uses a unit also depends on that unit's foundations, so a changed colour token marks every place drawn with it even when no component version moved. Across sources a consumer may itself be a source (templates use norms, contracts use templates); reconcile follows the chain and every status names its path, from the changed unit to the place.",
+      "verification": "manual",
+      "guidance": "Reference: standards/linkage.py reconcile with --baseline, the inventory of the release the record was brought up to."
+    },
+    {
+      "id": "one-reconcile",
+      "level": "must",
+      "text": "One command takes a usage record and inventories and gives each place one status: current (the hash matches), update-available, action-needed (the instruction is quoted), former-name (still works, with the date it stops), missing (the unit is gone), and, in profiles that use dates and mirrors, upcoming, kept and unverified. The impact rule of the profile decides between update-available and action-needed.",
+      "verification": "manual",
+      "guidance": "Framework: a major, or a journal entry that asks for a change, is action-needed. Norms: a new edition of a mandatory unit a place deviates from or restates is action-needed, of a default unit update-available. Templates: a major is action-needed. Reference: standards/linkage.py reconcile."
+    },
+    {
+      "id": "report-is-data",
+      "level": "must",
+      "text": "The reconcile report is machine-readable and also readable by a person; tools build on it. It never changes the consumer on its own.",
+      "verification": "manual"
+    },
+    {
+      "id": "no-silent-drift",
+      "level": "should",
+      "text": "A consumer that publishes (a documentation site, a design library, a product release, a set of client documents) runs reconcile before it does, and says which places it leaves out of date and why.",
+      "verification": "manual"
+    },
+    {
+      "id": "gate-in-the-release",
+      "level": "must",
+      "text": "The release route of each source runs the passport, hash-moves-version and inventory checks; a red check stops the release like any other gate.",
+      "verification": "manual"
+    },
+    {
+      "id": "one-format-for-all-sources",
+      "level": "must",
+      "text": "All profiles share the core formats simai.unit-passport, simai.unit-inventory, simai.unit-change-report, simai.usage-record and simai.reconcile-report, schema_version 1. The Framework formats simai.framework.unit-passport, unit-inventory and unit-change-report 1.0.0, used by simai/ui-source, simai/ui-pro and any component package, are read as the core formats with profile framework.",
+      "verification": "manual",
+      "guidance": "Core schemas accept the Framework documents through the pinned copies; their fields range, includes, files, former_ids, manual, step, dependencies_changed.moved and the violation codes keep their meaning."
+    },
+    {
+      "id": "adopt-in-place",
+      "level": "should",
+      "text": "Existing data is the starting point: manifests, release locks, journals, norm registries, template descriptions and document passports are extended, not replaced.",
+      "verification": "manual"
+    }
+  ],
+  "uses": [
+    {
+      "id": "simai.unit-passport-schema",
+      "version": "1.0.0",
+      "path": "../../schemas/unit-passport-1.0.0.schema.json",
+      "sha256": "a7f255719a67d6561b37ea156b81c768fdc089d5bd4c2c4ce4d58c04594124b0",
+      "description": "The core passport; Framework passports are read through the pinned copy."
+    },
+    {
+      "id": "simai.unit-inventory-schema",
+      "version": "1.0.0",
+      "path": "../../schemas/unit-inventory-1.0.0.schema.json",
+      "sha256": "c210d61ecdba2b01b3bb04def41af96a8b458c0a94eb3aa6666a02ac687879bb",
+      "description": "The core inventory of a release or a dated registry snapshot."
+    },
+    {
+      "id": "simai.unit-change-report-schema",
+      "version": "1.0.0",
+      "path": "../../schemas/unit-change-report-1.0.0.schema.json",
+      "sha256": "8c0c362f869bdd7e14e917f60de194c45fc666f45f531740091f6ce6acdff148",
+      "description": "The comparison of two inventories."
+    },
+    {
+      "id": "simai.usage-record-schema",
+      "version": "1.0.0",
+      "path": "../../schemas/usage-record-1.0.0.schema.json",
+      "sha256": "2ca5979f9b8f3a14e7ee8fa0bba7bb6b8b20da31d9eb7409ba1b07f5da8a31c6",
+      "description": "What a consumer uses and where."
+    },
+    {
+      "id": "simai.reconcile-report-schema",
+      "version": "1.0.0",
+      "path": "../../schemas/reconcile-report-1.0.0.schema.json",
+      "sha256": "55ae1b7c94839d59f9e48b027e780a229329c2edff11ec4f4d1210f018ebe8c4",
+      "description": "One status per place, as of a date, with its path."
+    },
+    {
+      "id": "simai.framework.unit-passport-schema",
+      "version": "1.0.0",
+      "path": "../../pinned/unit-passport-1.0.0.schema.json",
+      "sha256": "bb25d643d204aca114d8320367fc925e7e189e6df32b564150dffafddb4e6e93",
+      "description": "Framework passport 1.0.0, byte-identical to ui-source."
+    },
+    {
+      "id": "simai.framework.unit-inventory-schema",
+      "version": "1.0.0",
+      "path": "../../pinned/unit-inventory-1.0.0.schema.json",
+      "sha256": "e61dde103d92a68081bc5dff0a92d60f72602d9241008aeb5f4a1420756901a9",
+      "description": "Framework inventory 1.0.0, byte-identical to ui-source."
+    },
+    {
+      "id": "simai.framework.unit-change-report-schema",
+      "version": "1.0.0",
+      "path": "../../pinned/unit-change-report-1.0.0.schema.json",
+      "sha256": "29d853ccb62f78f361d445e839e3aadd48d15087b613672e7c7d247dbba5bcec",
+      "description": "Framework change report 1.0.0, byte-identical to ui-source."
+    }
+  ],
+  "references": [
+    {
+      "id": "simai.change-lifecycle",
+      "version": "1.1.0",
+      "path": "../../simai.change-lifecycle/1.1.0/standard.json",
+      "sha256": "c82961a2d95f067aa0e7201d8d8a2269e97caf9d833718b31ec4f42e372bfa4d",
+      "description": "The change journal that renames, removals and journal entries use."
+    }
+  ],
+  "specification": {
+    "id": "standard-contract.spec",
+    "version": "1.0.0",
+    "path": "../../../standard-contract/1.0/SPEC.md",
+    "sha256": "0b960d761c2f7454373666d64938c1937f4c72e87f586fdb217bbecbced15836",
+    "description": "Standard Contract 1.0 envelope specification, in this repository."
+  },
+  "extensions": {
+    "simai.ownership": {
+      "owner": "simai/standards",
+      "scope_note": "What is current, what is out of date and what to change, for every source of units and every consumer: SIMAI Framework parts, legal norms mirrored from their official source, document templates and the documents made from them, and any later profile.",
+      "previous": "simai.linkage 1.0.0, ui-source contracts/standards/simai.linkage/1.0.0/standard.json, approved 2026-10-27; every 1.0.0 requirement is kept at the same strength for the Framework profile.",
+      "decisions": [
+        "owner 2026-11-02: the universal core lives in this repository; SIMAI Framework keeps its rules as a profile",
+        "owner 2026-11-02: revision 2 of the draft approved; Framework thread reviews 2026-11-02 (ui-control bdd0f1f, 0a164e3) applied",
+        "owner 2026-11-02: release in simai/standards"
+      ],
+      "profiles": {
+        "framework": {
+          "version": "1.0.0",
+          "owner": "simai/ui-source, simai/ui-pro, any component package",
+          "id": "<kind>.<name>",
+          "version_scheme": "semver",
+          "hash": "git-files",
+          "constraint": "caret range",
+          "excluded": [
+            "profile-declared (implied by schema)",
+            "id-grammar-by-profile cross-source naming",
+            "anchors-declared",
+            "mirror-source",
+            "effective-dates",
+            "reconcile-as-of",
+            "valid-under-its-version",
+            "candidate-then-confirmed",
+            "unverified-is-visible"
+          ]
+        },
+        "norms": {
+          "version": "1.0.0",
+          "owner": "a document library as mirror",
+          "id": "<jurisdiction>/<act>/<article>",
+          "version_scheme": "dated",
+          "hash": "normalized-text",
+          "constraint": "in-force",
+          "force": "imperative=mandatory, dispositive=default"
+        },
+        "templates": {
+          "version": "1.0.0",
+          "owner": "the document library",
+          "id": "<jurisdiction>/<template>",
+          "version_scheme": "semver",
+          "hash": "git-files",
+          "constraint": "caret range; in-force towards norms",
+          "anchors": "clauses and sections",
+          "relations": [
+            "relies",
+            "restates",
+            "details",
+            "deviates"
+          ]
+        }
+      },
+      "tools": {
+        "reference": "standards/linkage.py validate | compare | reconcile | hash-text",
+        "framework": "ui-source scripts/linkage.mjs passports, inventory, compare"
+      },
+      "not_yet_checked": [
+        "the gate of each source is its own; this repository checks the formats, the pins and the reference implementation on fixtures",
+        "the reference reconcile reads one journal record per change; richer journal matching is left to the profile tools"
+      ]
+    }
+  }
+}

@@ -1,6 +1,7 @@
 # simai.change-lifecycle — universal core, draft for the owner's review
 
-Date: 2026-11-02. Status: **draft**, not approved. Revision 2 applies the
+Date: 2026-11-02. Status: **approved by the owner** (2026-11-02) and published as
+`standards/simai.change-lifecycle/1.1.0`. Revision 2 applies the
 Framework thread's review (ui-control
 `control/evidence/2026-11-02-simai-change-lifecycle-core-draft-review.md`,
 47782f4). The core is published in `simai/standards` (formerly ai-first). Companion of

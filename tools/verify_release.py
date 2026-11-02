@@ -6,13 +6,15 @@ from pathlib import Path
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+RELEASE = '1.1.0'
+STANDARDS = {'ai-first': '1.0.0', 'standard-contract': '1.0.0', 'standard-contract-lifecycle': '1.0.0', 'simai.linkage': '1.1.0', 'simai.change-lifecycle': '1.1.0'}
 
 def verify(root=ROOT):
     root = Path(root).resolve()
     lock = json.loads((root / 'release-manifest.json').read_text())
     errors = []
     seen = set()
-    if lock.get('release') != '1.0.0' or lock.get('standards') != {'ai-first': '1.0.0', 'standard-contract': '1.0.0', 'standard-contract-lifecycle': '1.0.0'}:
+    if lock.get('release') != RELEASE or lock.get('standards') != STANDARDS:
         errors.append('invalid-release-identity')
     for row in lock['files']:
         p = Path(row['path'])

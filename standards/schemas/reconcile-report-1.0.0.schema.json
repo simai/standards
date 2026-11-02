@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schema/reconcile-report.v1.json",
+  "x-simai-version": "1.0.0",
+  "title": "SIMAI reconcile report",
+  "description": "One status for each place of a usage record against inventories, as of a date (simai.linkage one-reconcile). Never changes the consumer on its own.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "consumer",
+    "as_of",
+    "places"
+  ],
+  "properties": {
+    "schema": {
+      "const": "simai.reconcile-report"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "consumer": {
+      "type": "string"
+    },
+    "as_of": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "places": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "place",
+          "unit",
+          "status",
+          "path"
+        ],
+        "properties": {
+          "place": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 260,
+            "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+            "description": "An id, or <source>:<id> for a unit of another source."
+          },
+          "status": {
+            "enum": [
+              "current",
+              "update-available",
+              "action-needed",
+              "former-name",
+              "missing",
+              "upcoming",
+              "kept",
+              "unverified"
+            ]
+          },
+          "path": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            },
+            "description": "The chain from the changed unit to the place."
+          },
+          "from_version": {
+            "type": "string"
+          },
+          "to_version": {
+            "type": "string"
+          },
+          "effective_from": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          },
+          "instruction": {
+            "type": "string"
+          },
+          "stops_on": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          },
+          "replaced_by": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 260,
+            "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+            "description": "An id, or <source>:<id> for a unit of another source."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,8 @@
 # simai.linkage 1.1.0 — universal core, draft for the owner's review
 
 Date: 2026-11-02. Status: **approved by the owner** (revision 2, 2026-11-02),
-pending the Framework thread's second review and the change-lifecycle split.
-Nothing here changes a published standard, a schema or a pin until it is
-published in `simai/standards`.
+reviewed twice by the Framework thread and published as
+`standards/simai.linkage/1.1.0` with the change-lifecycle split.
 
 Owner direction of 2026-11-02: the linkage standard becomes universal and its
 core lives with Standard Contract in this repository, which becomes

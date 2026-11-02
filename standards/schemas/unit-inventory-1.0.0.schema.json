@@ -1,0 +1,299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schema/unit-inventory.v1.json",
+  "x-simai-version": "1.0.0",
+  "title": "SIMAI unit inventory",
+  "description": "Every unit one release of one source carries (simai.linkage inventory-per-release). For the dated scheme a release is a dated snapshot of the registry. A Framework inventory (simai.framework.unit-inventory 1.0.0) is read as this format with profile framework.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/core"
+    },
+    {
+      "$ref": "https://simai.io/schema/framework/unit-inventory.v1.json"
+    }
+  ],
+  "$defs": {
+    "core": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "schema_version",
+        "profile",
+        "source",
+        "release",
+        "units"
+      ],
+      "properties": {
+        "schema": {
+          "const": "simai.unit-inventory"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "profile": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "version"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            },
+            "version": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+            }
+          },
+          "description": "The profile and its version (simai.linkage profile-declared)."
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "string"
+        },
+        "release": {
+          "type": "string",
+          "minLength": 1
+        },
+        "as_of": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "units": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "kind",
+              "version",
+              "content_sha256",
+              "dependencies"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "^[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+                "description": "An id in the grammar of the profile: <kind>.<name> (framework) or a / path (norms, templates)."
+              },
+              "kind": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]*$"
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1,
+                "description": "In the profile scheme: semver x.y.z, a dated edition (its since date) or a sequence number."
+              },
+              "content_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "edition": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "since",
+                  "by"
+                ],
+                "properties": {
+                  "since": {
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                  },
+                  "by": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "announced": {
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                  },
+                  "effective_to": {
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                  },
+                  "status": {
+                    "enum": [
+                      "candidate",
+                      "confirmed"
+                    ]
+                  },
+                  "found_by": {
+                    "type": "string"
+                  },
+                  "confirmed_by": {
+                    "type": "string"
+                  }
+                },
+                "description": "A version under the dated scheme: the date it takes effect and the act or record that introduced it."
+              },
+              "force": {
+                "enum": [
+                  "mandatory",
+                  "default",
+                  "mixed"
+                ]
+              },
+              "checked": {
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+              },
+              "anchors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z0-9_-]+)*$"
+                    },
+                    "content_sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  }
+                }
+              },
+              "dependencies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 260,
+                      "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+                      "description": "An id, or <source>:<id> for a unit of another source."
+                    },
+                    "range": {
+                      "type": "string",
+                      "pattern": "^\\^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+                    },
+                    "constraint": {
+                      "enum": [
+                        "in-force",
+                        "exact"
+                      ]
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "from": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z0-9_-]+)*$"
+                    },
+                    "relation": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z-]*$"
+                    },
+                    "manual": {
+                      "const": true
+                    }
+                  },
+                  "oneOf": [
+                    {
+                      "required": [
+                        "range"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "constraint"
+                      ]
+                    }
+                  ],
+                  "description": "A dependency with a constraint in the profile scheme: a caret range, the edition in force on the reference date, or an exact version."
+                }
+              },
+              "former_ids": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "journal"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 260,
+                      "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+                      "description": "An id, or <source>:<id> for a unit of another source."
+                    },
+                    "journal": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              },
+              "history": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "since",
+                    "by"
+                  ],
+                  "properties": {
+                    "since": {
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                    },
+                    "by": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "announced": {
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                    },
+                    "effective_to": {
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                    },
+                    "status": {
+                      "enum": [
+                        "candidate",
+                        "confirmed"
+                      ]
+                    },
+                    "found_by": {
+                      "type": "string"
+                    },
+                    "confirmed_by": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "A version under the dated scheme: the date it takes effect and the act or record that introduced it."
+                },
+                "description": "Earlier editions, oldest first (dated scheme)."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

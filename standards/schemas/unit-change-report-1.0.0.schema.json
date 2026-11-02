@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schema/unit-change-report.v1.json",
+  "x-simai-version": "1.0.0",
+  "title": "SIMAI unit change report",
+  "description": "The comparison of two inventories of one source (simai.linkage inventories-compare). A Framework report (simai.framework.unit-change-report 1.0.0) is read as this format with profile framework.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/core"
+    },
+    {
+      "$ref": "https://simai.io/schema/framework/unit-change-report.v1.json"
+    }
+  ],
+  "$defs": {
+    "core": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "schema_version",
+        "profile",
+        "source",
+        "from",
+        "to",
+        "added",
+        "removed",
+        "changed",
+        "dependencies_changed",
+        "violations"
+      ],
+      "properties": {
+        "schema": {
+          "const": "simai.unit-change-report"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "profile": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "version"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            },
+            "version": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+            }
+          },
+          "description": "The profile and its version (simai.linkage profile-declared)."
+        },
+        "source": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "added": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 260,
+            "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+            "description": "An id, or <source>:<id> for a unit of another source."
+          }
+        },
+        "removed": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 260,
+            "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+            "description": "An id, or <source>:<id> for a unit of another source."
+          }
+        },
+        "changed": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "from_version",
+              "to_version"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 260,
+                "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+                "description": "An id, or <source>:<id> for a unit of another source."
+              },
+              "from_version": {
+                "type": "string"
+              },
+              "to_version": {
+                "type": "string"
+              },
+              "step": {
+                "enum": [
+                  "major",
+                  "minor",
+                  "patch",
+                  "edition",
+                  "sequence"
+                ]
+              },
+              "journal": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "anchors": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z0-9_-]+)*$"
+                }
+              }
+            }
+          }
+        },
+        "dependencies_changed": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 260,
+                "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+                "description": "An id, or <source>:<id> for a unit of another source."
+              },
+              "moved": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 260,
+                  "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+                  "description": "An id, or <source>:<id> for a unit of another source."
+                }
+              }
+            }
+          }
+        },
+        "violations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "code"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 260,
+                "pattern": "^([a-z0-9][a-z0-9._/-]*:)?[a-z][a-z0-9-]*([./][a-z0-9][a-z0-9._-]*)+$",
+                "description": "An id, or <source>:<id> for a unit of another source."
+              },
+              "code": {
+                "enum": [
+                  "hash-moved-without-version",
+                  "version-went-back",
+                  "source-differs",
+                  "id-reused"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,14 +1,17 @@
-# AI First and Standard Contract 1.0.0
+# SIMAI standards 1.1.0
 
 Two complementary, maintainer-supported stable standards for project adoption.
 AI First describes discoverable knowledge and existing capabilities. Standard
 Contract describes the rules objects select, inherit and use, with pinned local
-dependencies and a separate lifecycle profile.
+dependencies and a separate lifecycle profile. [SIMAI standards](standards/README.md)
+in that envelope apply across SIMAI sources: `simai.linkage` and
+`simai.change-lifecycle` 1.1.0.
 
 - [AI First 1.0 specification](spec/1.0/README.md) and [reader guide](docs/1.0/quickstart.md).
 - [Standard Contract 1.0.0](standard-contract/1.0/README.md) and [lifecycle](standard-contract/lifecycle/README.md).
 - [Adoption and migration](docs/releases/adoption.md).
-- [Release notes](docs/releases/v1.0.0.md), [release status](RELEASE-STATUS.md), [governance](GOVERNANCE.md).
+- [SIMAI standards: linkage and change lifecycle](standards/README.md).
+- [Release notes](docs/releases/v1.1.0.md), [release status](RELEASE-STATUS.md), [governance](GOVERNANCE.md).
 
 ```sh
 python3 -m venv .venv

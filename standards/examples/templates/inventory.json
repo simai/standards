@@ -1,0 +1,54 @@
+{
+  "schema": "simai.unit-inventory",
+  "schema_version": 1,
+  "profile": {
+    "id": "templates",
+    "version": "1.0.0"
+  },
+  "source": "mirai-document-library",
+  "release": "library-be1e33e00000",
+  "units": [
+    {
+      "id": "ru/loan",
+      "kind": "template",
+      "version": "1.1.0",
+      "content_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "anchors": [
+        {
+          "id": "interest.free",
+          "dependencies": [
+            {
+              "id": "ru/gk/809",
+              "constraint": "in-force",
+              "from": "interest.free",
+              "relation": "deviates"
+            }
+          ]
+        },
+        {
+          "id": "payout.cash",
+          "dependencies": [
+            {
+              "id": "ru/gk/808",
+              "constraint": "in-force",
+              "from": "payout.cash",
+              "relation": "restates"
+            }
+          ]
+        },
+        {
+          "id": "purpose.target",
+          "dependencies": [
+            {
+              "id": "ru/gk/814",
+              "constraint": "in-force",
+              "from": "purpose.target",
+              "relation": "relies"
+            }
+          ]
+        }
+      ],
+      "dependencies": []
+    }
+  ]
+}
