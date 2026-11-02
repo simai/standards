@@ -240,7 +240,8 @@ Reviewed: the ten Framework standards in `ui-source/contracts/standards`.
 ## Rollout proposed
 
 1. Owner's review of this draft.
-2. Publish the core `simai.linkage` 1.1.0 in ai-first (`standard-contract`
+2. Transfer and rename the repository to `simai/standards`, then publish the
+   core `simai.linkage` 1.1.0 there (`standard-contract`
    envelope, core schemas, a reconcile reference implementation with fixtures for
    all three profiles). The Framework thread checks that its profile is 1.0.0
    unchanged; ui-source then pins the core by digest and keeps its scripts.
@@ -253,5 +254,7 @@ Reviewed: the ten Framework standards in `ui-source/contracts/standards`.
 ## Open questions for the owner
 
 1. Version: 1.1.0 (additive, Framework unchanged) — recommended — or 2.0.0.
-2. Whether the repository is renamed now that it holds several standards (see
-   the analysis given to the owner on 2026-11-02).
+2. ~~Repository name~~ — decided 2026-11-02: this repository moves from
+   `zabarov/ai-first` to the `simai` organization as **`simai/standards`**, in
+   one step at the release of linkage 1.1.0. The AI First standard keeps its
+   name.
