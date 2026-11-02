@@ -1,0 +1,19 @@
+{
+  "schema": "simai.usage-record",
+  "schema_version": 1,
+  "consumer": "figma-ui-kit",
+  "sources": [
+    {
+      "source": "simai/ui-source",
+      "release": "ui-aaaaaaaaaaaa"
+    }
+  ],
+  "places": [
+    {
+      "place": "figma:Accordion/Default",
+      "unit": "component.accordion",
+      "version": "1.0.0",
+      "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ]
+}

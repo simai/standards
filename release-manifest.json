@@ -1,9 +1,11 @@
 {
-  "release": "1.0.0",
+  "release": "1.1.0",
   "standards": {
     "ai-first": "1.0.0",
     "standard-contract": "1.0.0",
-    "standard-contract-lifecycle": "1.0.0"
+    "standard-contract-lifecycle": "1.0.0",
+    "simai.linkage": "1.1.0",
+    "simai.change-lifecycle": "1.1.0"
   },
   "integrity": "sha256; authenticity requires a separately trusted source",
   "files": [
@@ -39,8 +41,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "9c97b8f2d150d6ed3d3783bd3da9f2c8ae382bb6328d94e357a2749a5606ec31",
-      "bytes": 569
+      "sha256": "54a34b9ca237f7c14e62bd184d7b5341f266786808ffe3527cd945b423b488ba",
+      "bytes": 1227
     },
     {
       "path": "CONTRIBUTING.md",
@@ -64,13 +66,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "86032ae1aae9294a408ea0a6ba3f8d14177f7cd932223a84d391db2120728b1e",
-      "bytes": 1954
+      "sha256": "6488236ed7b4f6bd6bbee2ef3769e0c4897e1593678310f37db2316b84c3c6f7",
+      "bytes": 2147
     },
     {
       "path": "RELEASE-STATUS.md",
-      "sha256": "8d88804a9c9ebcccd4f8ec4f3260bfd1eeff5809f0e0e683fd559a72fe6a036d",
-      "bytes": 815
+      "sha256": "cda7e4b64cc5c2c28f3c0cd0b8f0dda7ebbb1f44892d956bfa7a64d7d465d312",
+      "bytes": 908
     },
     {
       "path": "SECURITY.md",
@@ -79,12 +81,12 @@
     },
     {
       "path": "VERSION",
-      "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
+      "sha256": "1575e1af4a95f12f70b4ee6a6adce8160953d93ea17dc2611b90883ccc3ad3b8",
       "bytes": 6
     },
     {
       "path": "ai.json",
-      "sha256": "3e4f5b5ae0f9b91e96fb3f283643bd55e5150267d2fda8109de723b3ae447b99",
+      "sha256": "660bf44d882c1c3646088b7f13926bbc4e861361da857277008afeff808d929d",
       "bytes": 8094
     },
     {
@@ -1163,6 +1165,16 @@
       "bytes": 20450
     },
     {
+      "path": "docs/proposals/2026-11-02-simai-change-lifecycle-core-draft.md",
+      "sha256": "1313d90ea6b20e68f7da1bde76d0931e7dfa04a2e77316d0f327a94997618e4b",
+      "bytes": 9410
+    },
+    {
+      "path": "docs/proposals/2026-11-02-simai-linkage-universal-draft.md",
+      "sha256": "aaf6e625c57f2542f53773a44d1e64b1d5be3cc3bf2cfed6fb6e12c2b37ea434",
+      "bytes": 16680
+    },
+    {
       "path": "docs/publisher.md",
       "sha256": "a6d7f9ba1e67b4d42a3aefc8f84594cfb91da2907c48f1e073d70ba99be19697",
       "bytes": 3641
@@ -1179,8 +1191,8 @@
     },
     {
       "path": "docs/releases/README.md",
-      "sha256": "b9dc40bc8e413ed7d0c8ba11fa94d7072d5522116a7e7dd313f6d5ded29d32de",
-      "bytes": 108
+      "sha256": "071dd1aa7a77bd1a60204410071b888644d8f3c8becd1d163510ab87fec26b71",
+      "bytes": 168
     },
     {
       "path": "docs/releases/adoption.md",
@@ -1196,6 +1208,11 @@
       "path": "docs/releases/v1.0.0.md",
       "sha256": "9fcab7a8fd00788cd131fec18254f190689b58bf7c071e3017bd63180a36d19f",
       "bytes": 2005
+    },
+    {
+      "path": "docs/releases/v1.1.0.md",
+      "sha256": "9469d715b9e1961120de9c61a2b62a25c97e59bf5423b3431a257847dcd047fc",
+      "bytes": 1760
     },
     {
       "path": "docs/releases/verification.json",
@@ -2413,6 +2430,121 @@
       "bytes": 6944
     },
     {
+      "path": "standards/README.md",
+      "sha256": "d6f26a21dddf641cf820cf1cacd7a437ebeaa249c4f60e5dacf280b9c45800b2",
+      "bytes": 2717
+    },
+    {
+      "path": "standards/examples/documents/usage-record.json",
+      "sha256": "85598d26654a9807d91d1b101e5058caa51c2a177a1b5e9a57a5e07e9a557c0f",
+      "bytes": 794
+    },
+    {
+      "path": "standards/examples/framework/accordion.passport.json",
+      "sha256": "0bba2cc7a0c08c162b9e403538e46682e439c563577e92396f5d68d96a76bc8e",
+      "bytes": 1285
+    },
+    {
+      "path": "standards/examples/framework/inventory-a.json",
+      "sha256": "5d4c4dc89cef012d2e3a261a797709d6df1e64caf5ffc6a77a6849157075cc54",
+      "bytes": 725
+    },
+    {
+      "path": "standards/examples/framework/inventory-b.json",
+      "sha256": "da28a8aba97a93edcef028055fe6593bf64c3ea8579ee52d2a29864d7064ea9e",
+      "bytes": 725
+    },
+    {
+      "path": "standards/examples/framework/usage-record.json",
+      "sha256": "8be388e9dfaac3caf7fbc9ceb8ce334a3686fcf5d41202b4f89bac6400071b00",
+      "bytes": 419
+    },
+    {
+      "path": "standards/examples/norms/gk-809.passport.json",
+      "sha256": "4d6cfddd091f3bed4f60779174f3e75e47a614be0ed97eb0f489c13742200283",
+      "bytes": 716
+    },
+    {
+      "path": "standards/examples/norms/inventory.json",
+      "sha256": "a604203b289fed52d36d627cf7e26dd6ad5e5ed2c108a24445d15ea9edbf098b",
+      "bytes": 1570
+    },
+    {
+      "path": "standards/examples/templates/inventory.json",
+      "sha256": "0383c666cbd09fa736abe300cbeb7e6f80efcaf2f2f357628bb4391861152e2a",
+      "bytes": 1261
+    },
+    {
+      "path": "standards/examples/templates/loan.passport.json",
+      "sha256": "3ebee8efd9c02a8e5a89229e550df7ee228b38db06da32dbc89b152dd0d0e3ca",
+      "bytes": 1190
+    },
+    {
+      "path": "standards/linkage.py",
+      "sha256": "267d29ae443fa1536b954879eb77aa20f7170461abb537fc990005a3bd875e1b",
+      "bytes": 15959
+    },
+    {
+      "path": "standards/pinned/change-journal-1.2.0.schema.json",
+      "sha256": "cbc4b1399988bc025ebf45aa4ff90c8be544ba14af5b892d1e7a373038ecae42",
+      "bytes": 4833
+    },
+    {
+      "path": "standards/pinned/unit-change-report-1.0.0.schema.json",
+      "sha256": "29d853ccb62f78f361d445e839e3aadd48d15087b613672e7c7d247dbba5bcec",
+      "bytes": 4376
+    },
+    {
+      "path": "standards/pinned/unit-inventory-1.0.0.schema.json",
+      "sha256": "e61dde103d92a68081bc5dff0a92d60f72602d9241008aeb5f4a1420756901a9",
+      "bytes": 3430
+    },
+    {
+      "path": "standards/pinned/unit-passport-1.0.0.schema.json",
+      "sha256": "bb25d643d204aca114d8320367fc925e7e189e6df32b564150dffafddb4e6e93",
+      "bytes": 5213
+    },
+    {
+      "path": "standards/schemas/change-journal-1.0.0.schema.json",
+      "sha256": "593b0d82966f83dde8c4bb1a21a005892869fa228cd48f0f3e3080842a241c90",
+      "bytes": 5307
+    },
+    {
+      "path": "standards/schemas/reconcile-report-1.0.0.schema.json",
+      "sha256": "55ae1b7c94839d59f9e48b027e780a229329c2edff11ec4f4d1210f018ebe8c4",
+      "bytes": 2711
+    },
+    {
+      "path": "standards/schemas/unit-change-report-1.0.0.schema.json",
+      "sha256": "8c0c362f869bdd7e14e917f60de194c45fc666f45f531740091f6ce6acdff148",
+      "bytes": 5735
+    },
+    {
+      "path": "standards/schemas/unit-inventory-1.0.0.schema.json",
+      "sha256": "c210d61ecdba2b01b3bb04def41af96a8b458c0a94eb3aa6666a02ac687879bb",
+      "bytes": 9912
+    },
+    {
+      "path": "standards/schemas/unit-passport-1.0.0.schema.json",
+      "sha256": "a7f255719a67d6561b37ea156b81c768fdc089d5bd4c2c4ce4d58c04594124b0",
+      "bytes": 11245
+    },
+    {
+      "path": "standards/schemas/usage-record-1.0.0.schema.json",
+      "sha256": "2ca5979f9b8f3a14e7ee8fa0bba7bb6b8b20da31d9eb7409ba1b07f5da8a31c6",
+      "bytes": 2562
+    },
+    {
+      "path": "standards/simai.change-lifecycle/1.1.0/standard.json",
+      "sha256": "c82961a2d95f067aa0e7201d8d8a2269e97caf9d833718b31ec4f42e372bfa4d",
+      "bytes": 9417
+    },
+    {
+      "path": "standards/simai.linkage/1.1.0/standard.json",
+      "sha256": "82d45649de884e0fd9e2f7e6217a642866724cb3cf2d473381e8a0611d7e86b2",
+      "bytes": 19842
+    },
+    {
       "path": "tests/test_02_contracts.py",
       "sha256": "1d11fb93caa5c8070b7d297c9cc898ccceef34802b83d4c9876274cd863c0a6a",
       "bytes": 5960
@@ -2489,13 +2621,18 @@
     },
     {
       "path": "tests/test_release.py",
-      "sha256": "cbff87739668818c03b1656f7fc1279b81e9396d2f43925479bd5d81a84be0d8",
-      "bytes": 1839
+      "sha256": "042fa47d60adc2d4106a1b4661583da632b1cb1483f2525c502625e41b98b667",
+      "bytes": 1896
     },
     {
       "path": "tests/test_standard.py",
       "sha256": "5d3e77e072eb4b25c7be37e1253b91a1be67466b57908d23611cf8720d8079b0",
       "bytes": 17531
+    },
+    {
+      "path": "tests/test_standards.py",
+      "sha256": "dd186bc062525c690ccb9f7c6a3f425a7eb569f439c85126cdb06b1d022945dd",
+      "bytes": 9888
     },
     {
       "path": "tools/aifirst.py",
@@ -2609,8 +2746,8 @@
     },
     {
       "path": "tools/verify_release.py",
-      "sha256": "1b96924ea5e07eb2d2168b24a304ac1b01f7d1f014e6c7ce5595f2eecf5c70b0",
-      "bytes": 1657
+      "sha256": "03098562ee4448a852f2374d8dc7633e57ba6d160a44b45d07b7347abb52accd",
+      "bytes": 1758
     }
   ]
 }

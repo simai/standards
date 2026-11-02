@@ -1,0 +1,60 @@
+{
+  "schema": "simai.unit-inventory",
+  "schema_version": 1,
+  "profile": {
+    "id": "norms",
+    "version": "1.0.0"
+  },
+  "source": "mirai-document-library/ru",
+  "release": "ru-norms-2026-11-02",
+  "as_of": "2026-11-02",
+  "units": [
+    {
+      "id": "ru/gk/809",
+      "kind": "norm",
+      "version": "2018-06-01",
+      "content_sha256": "9999999999999999999999999999999999999999999999999999999999999999",
+      "force": "default",
+      "checked": "2026-11-02",
+      "edition": {
+        "since": "2018-06-01",
+        "by": "Federal Law of 26.07.2017 No. 212-FZ",
+        "status": "confirmed"
+      },
+      "dependencies": []
+    },
+    {
+      "id": "ru/gk/808",
+      "kind": "norm",
+      "version": "2027-03-01",
+      "content_sha256": "8888888888888888888888888888888888888888888888888888888888888888",
+      "force": "mandatory",
+      "checked": "2026-11-02",
+      "edition": {
+        "since": "2027-03-01",
+        "by": "Example amending act (fixture)",
+        "status": "confirmed"
+      },
+      "history": [
+        {
+          "since": "2018-06-01",
+          "by": "Federal Law of 26.07.2017 No. 212-FZ",
+          "status": "confirmed"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "ru/gk/814",
+      "kind": "norm",
+      "version": "2018-06-01",
+      "content_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+      "force": "default",
+      "edition": {
+        "since": "2018-06-01",
+        "by": "Federal Law of 26.07.2017 No. 212-FZ"
+      },
+      "dependencies": []
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "simai.usage-record",
+  "schema_version": 1,
+  "consumer": "client-documents",
+  "sources": [
+    {
+      "source": "mirai-document-library",
+      "release": "library-be1e33e00000"
+    },
+    {
+      "source": "mirai-document-library/ru",
+      "release": "ru-norms-2026-11-02"
+    }
+  ],
+  "places": [
+    {
+      "place": "contract 15/2026",
+      "unit": "ru/loan",
+      "version": "1.1.0",
+      "content_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "made_on": "2026-11-02"
+    },
+    {
+      "place": "contract 16/2026 (signed)",
+      "unit": "ru/loan",
+      "version": "1.1.0",
+      "content_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "made_on": "2026-11-02",
+      "kept": true
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "simai.unit-passport",
+  "schema_version": 1,
+  "profile": {
+    "id": "norms",
+    "version": "1.0.0"
+  },
+  "id": "ru/gk/809",
+  "kind": "norm",
+  "version": "2018-06-01",
+  "version_scheme": "dated",
+  "edition": {
+    "since": "2018-06-01",
+    "by": "Federal Law of 26.07.2017 No. 212-FZ",
+    "status": "confirmed"
+  },
+  "owner": "mirai-document-library (mirror)",
+  "mirror": {
+    "origin": "http://pravo.gov.ru",
+    "retrieved_at": "2026-11-02T10:00:00Z"
+  },
+  "content_sha256": "9999999999999999999999999999999999999999999999999999999999999999",
+  "hash_method": "normalized-text",
+  "normalization": "simai.text/1",
+  "force": "default",
+  "checked": "2026-11-02",
+  "dependencies": []
+}

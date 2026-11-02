@@ -2,7 +2,7 @@
   "format": "ai-first",
   "formatVersion": "0.1",
   "document": "manifest",
-  "revision": "6d1512efc2f7c3a29be9a57af5abbfc0aec025040f65627374d56d44a6ac31d5",
+  "revision": "cd80f8fd9adf77ddf8f1d00e8bcb1f39d679112d98e64c3a5b2f170d9ad43a28",
   "resource": {
     "id": "urn:ai-first:specification:1.0",
     "name": "AI First and Standard Contract 1.0.0",
@@ -20,7 +20,7 @@
       "title": "AI First overview",
       "description": "Purpose, scope and initial adoption.",
       "language": "en",
-      "revision": "86032ae1aae9294a408ea0a6ba3f8d14177f7cd932223a84d391db2120728b1e",
+      "revision": "6488236ed7b4f6bd6bbee2ef3769e0c4897e1593678310f37db2316b84c3c6f7",
       "status": "published",
       "source": "./README.md",
       "appliesTo": {
@@ -33,7 +33,7 @@
         {
           "href": "./README.md",
           "mediaType": "text/markdown",
-          "sha256": "86032ae1aae9294a408ea0a6ba3f8d14177f7cd932223a84d391db2120728b1e"
+          "sha256": "6488236ed7b4f6bd6bbee2ef3769e0c4897e1593678310f37db2316b84c3c6f7"
         }
       ]
     },
