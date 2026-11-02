@@ -1,7 +1,9 @@
 # simai.linkage 1.1.0 — universal core, draft for the owner's review
 
-Date: 2026-11-02. Status: **draft**, not approved. Nothing here changes a
-published standard, a schema or a pin until the owner approves it.
+Date: 2026-11-02. Status: **approved by the owner** (revision 2, 2026-11-02),
+pending the Framework thread's second review and the change-lifecycle split.
+Nothing here changes a published standard, a schema or a pin until it is
+published in `simai/standards`.
 
 Owner direction of 2026-11-02: the linkage standard becomes universal and its
 core lives in ai-first, next to Standard Contract. SIMAI Framework keeps its own
